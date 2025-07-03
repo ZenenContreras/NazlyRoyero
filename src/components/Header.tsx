@@ -148,32 +148,31 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex">
-            <a
-              href="#contacto"
-              onClick={(e) => handleSectionNavigation('#contacto', e)}
+            <Link
+              to="/login"
               className="text-gray-700 hover:text-gray-900 text-sm px-4 py-2 border border-gray-200 hover:border-gray-300 rounded-full transition-all duration-200"
             >
-              Contacto
-            </a>
+              Iniciar sesión
+            </Link>
           </div>
 
           {/* Mobile menu button */}
           <button
             onClick={toggleMenu}
-            className="lg:hidden p-2 text-gray-500 hover:text-gray-700 transition-colors duration-200"
+            className="lg:hidden relative z-50 p-2 text-gray-600 hover:text-gray-900 transition-colors duration-200 rounded-lg hover:bg-gray-50"
             aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
           >
-            <div className="w-5 h-5 relative">
-              <span className={`absolute left-0 top-1.5 w-5 h-0.5 bg-current transition-all duration-200 ${
-                isMenuOpen ? 'rotate-45 translate-y-1' : ''
+            <div className="w-6 h-6 relative flex flex-col justify-center">
+              <span className={`absolute w-6 h-0.5 bg-current transition-all duration-300 ease-in-out ${
+                isMenuOpen ? 'rotate-45 top-3' : 'top-1.5'
               }`}></span>
-              <span className={`absolute left-0 top-2.5 w-5 h-0.5 bg-current transition-all duration-200 ${
-                isMenuOpen ? 'opacity-0' : ''
+              <span className={`absolute w-6 h-0.5 bg-current transition-all duration-300 ease-in-out top-3 ${
+                isMenuOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
               }`}></span>
-              <span className={`absolute left-0 top-3.5 w-5 h-0.5 bg-current transition-all duration-200 ${
-                isMenuOpen ? '-rotate-45 -translate-y-1' : ''
+              <span className={`absolute w-6 h-0.5 bg-current transition-all duration-300 ease-in-out ${
+                isMenuOpen ? '-rotate-45 top-3' : 'top-4.5'
               }`}></span>
             </div>
           </button>
@@ -182,12 +181,12 @@ export default function Header() {
         {/* Mobile Navigation */}
         <div 
           id="mobile-menu"
-          className={`lg:hidden overflow-hidden transition-all duration-300 ${
-            isMenuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
+          className={`lg:hidden transition-all duration-300 ease-in-out ${
+            isMenuOpen ? 'max-h-screen opacity-100 visible' : 'max-h-0 opacity-0 invisible overflow-hidden'
           }`}
         >
-          <div className="py-4 border-t border-gray-100">
-            <nav className="flex flex-col space-y-2">
+          <div className="py-4 border-t border-gray-100 bg-white/95 backdrop-blur-sm">
+            <nav className="flex flex-col space-y-1">
               {menuItems.map((item) => {
                 const isActive = isActivePage(item.href);
                 
@@ -197,10 +196,10 @@ export default function Header() {
                       key={item.name}
                       href={item.href}
                       onClick={(e) => handleSectionNavigation(item.href, e)}
-                      className={`px-3 py-2 text-base transition-colors duration-200 ${
+                      className={`px-4 py-3 text-base font-medium transition-all duration-200 rounded-lg mx-2 ${
                         isActive 
-                          ? 'text-gray-900' 
-                          : 'text-gray-600 hover:text-gray-900'
+                          ? 'text-[#6C7A52] bg-[#6C7A52]/10' 
+                          : 'text-gray-700 hover:text-[#6C7A52] hover:bg-gray-50'
                       }`}
                     >
                       {item.name}
@@ -211,10 +210,10 @@ export default function Header() {
                     <Link
                       key={item.name}
                       to={item.href}
-                      className={`px-3 py-2 text-base transition-colors duration-200 ${
+                      className={`px-4 py-3 text-base font-medium transition-all duration-200 rounded-lg mx-2 ${
                         isActive 
-                          ? 'text-gray-900' 
-                          : 'text-gray-600 hover:text-gray-900'
+                          ? 'text-[#6C7A52] bg-[#6C7A52]/10' 
+                          : 'text-gray-700 hover:text-[#6C7A52] hover:bg-gray-50'
                       }`}
                     >
                       {item.name}
@@ -224,14 +223,13 @@ export default function Header() {
               })}
               
               {/* Mobile CTA */}
-              <div className="pt-3 mt-2 border-t border-gray-100">
-                <a
-                  href="#contacto"
-                  onClick={(e) => handleSectionNavigation('#contacto', e)}
-                  className="block text-center px-3 py-2 text-gray-700 hover:text-gray-900 text-base border border-gray-200 hover:border-gray-300 rounded-full transition-all duration-200 mx-3"
+              <div className="pt-4 mt-4 mx-2">
+                <Link
+                  to="/login"
+                  className="block text-center px-4 py-3 text-white bg-gradient-to-r from-[#6C7A52] to-[#5a6644] hover:from-[#5a6644] hover:to-[#4a5537] text-base font-medium rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
                 >
-                  Contacto
-                </a>
+                  Iniciar sesión
+                </Link>
               </div>
             </nav>
           </div>
@@ -241,7 +239,7 @@ export default function Header() {
       {/* Mobile overlay */}
       {isMenuOpen && (
         <div 
-          className="lg:hidden fixed inset-0 bg-black/5 z-[-1]"
+          className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-[-1] transition-all duration-300"
           onClick={toggleMenu}
         />
       )}

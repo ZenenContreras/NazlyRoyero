@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Header, Footer, HomePage, AboutPage, MethodPage, ServicesPage, BlogPage, PodcastPage, ResourcesPage, ContactPage } from './components';
+import { Header, Footer, HomePage, AboutPage, MethodPage, ServicesPage, BlogPage, PodcastPage, ResourcesPage, ContactPage, LoginPage, RegisterPage } from './components';
 import { useScrollToSection } from './hooks/useScrollToSection';
 
 function AppContent() {
@@ -17,6 +17,8 @@ function AppContent() {
         <Route path="/podcast" element={<PodcastPage />} />
         <Route path="/recursos" element={<ResourcesPage />} />
         <Route path="/contacto" element={<ContactPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/registro" element={<RegisterPage />} />
       </Routes>
       <Footer />
     </div>

@@ -7,3 +7,5 @@ export { default as BlogPage } from './BlogPage';
 export { default as PodcastPage } from './PodcastPage';
 export { default as ResourcesPage } from './ResourcesPage';
 export { default as ContactPage } from './ContactPage';
+export { default as LoginPage } from './LoginPage';
+export { default as RegisterPage } from './RegisterPage';
