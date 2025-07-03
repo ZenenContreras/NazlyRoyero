@@ -23,18 +23,18 @@ const Contact = () => {
   };
 
   return (
-    <section id="contacto" className="py-20 bg-gradient-to-br from-[#A7D3C1]/10 to-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contacto" className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-[#A7D3C1]/10 to-white">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center mb-6">
-            <MessageCircle className="text-[#6C7A52] mr-3" size={40} />
-            <h2 className="text-4xl md:text-5xl font-light text-gray-900">
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="flex flex-col sm:flex-row items-center justify-center mb-4 sm:mb-6">
+            <MessageCircle className="text-[#6C7A52] mr-0 sm:mr-3 mb-2 sm:mb-0" size={32} />
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900">
               <span className="text-[#6C7A52] font-medium">Conversemos</span>
             </h2>
           </div>
           
-          <div className="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed space-y-4">
+          <div className="max-w-4xl mx-auto text-base sm:text-lg text-gray-700 leading-relaxed space-y-3 sm:space-y-4">
             <p>
               Si este mensaje resonó contigo, si sientes que es momento de activar tu
               máximo potencial y caminar hacia tu expansión con intención y propósito,
@@ -48,10 +48,10 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-start">
           {/* Contact Form */}
-          <div className="bg-white p-8 rounded-3xl shadow-lg">
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="bg-white p-6 sm:p-8 rounded-3xl shadow-lg order-2 lg:order-1">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                   Nombre *
@@ -63,7 +63,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#6C7A52] focus:border-transparent transition-all duration-200"
+                  className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#6C7A52] focus:border-transparent transition-all duration-200 text-sm sm:text-base"
                   placeholder="Tu nombre completo"
                 />
               </div>
@@ -79,7 +79,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#6C7A52] focus:border-transparent transition-all duration-200"
+                  className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#6C7A52] focus:border-transparent transition-all duration-200 text-sm sm:text-base"
                   placeholder="tu@email.com"
                 />
               </div>
@@ -94,7 +94,7 @@ const Contact = () => {
                   value={formData.service}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#6C7A52] focus:border-transparent transition-all duration-200"
+                  className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#6C7A52] focus:border-transparent transition-all duration-200 text-sm sm:text-base"
                 >
                   <option value="">Selecciona una opción</option>
                   <option value="coaching-1-1">Coaching 1:1</option>
@@ -114,80 +114,80 @@ const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#6C7A52] focus:border-transparent transition-all duration-200 resize-none"
+                  rows={4}
+                  className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#6C7A52] focus:border-transparent transition-all duration-200 resize-none text-sm sm:text-base"
                   placeholder="Cuéntame un poco sobre tu momento actual y cómo te gustaría que te acompañe..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#6C7A52] text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-[#5a6644] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center group"
+                className="w-full bg-[#6C7A52] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl text-base sm:text-lg font-medium hover:bg-[#5a6644] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center group"
               >
-                <Send className="mr-2" size={20} />
+                <Send className="mr-2" size={18} />
                 Enviar mensaje
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
               </button>
             </form>
           </div>
 
           {/* Additional Info */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8 order-1 lg:order-2">
             {/* Quote */}
-            <div className="bg-gradient-to-r from-[#6C7A52] to-[#5a6644] p-8 rounded-3xl text-white">
-              <p className="text-xl font-medium leading-relaxed mb-6">
+            <div className="bg-gradient-to-r from-[#6C7A52] to-[#5a6644] p-6 sm:p-8 rounded-3xl text-white">
+              <p className="text-lg sm:text-xl font-medium leading-relaxed mb-4 sm:mb-6">
                 "Tu transformación comienza con una conversación. Estoy aquí para
                 escucharte."
               </p>
               
               <a
                 href="#"
-                className="inline-flex items-center bg-[#4FEF8B] text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-[#3de076] transition-all duration-300"
+                className="inline-flex items-center bg-[#4FEF8B] text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium hover:bg-[#3de076] transition-all duration-300 text-sm sm:text-base"
               >
                 Reserva tu sesión
-                <ArrowRight className="ml-2" size={18} />
+                <ArrowRight className="ml-2" size={16} />
               </a>
             </div>
 
             {/* Process Info */}
-            <div className="bg-white p-8 rounded-3xl shadow-lg">
-              <h3 className="text-xl font-medium text-[#6C7A52] mb-6">
+            <div className="bg-white p-6 sm:p-8 rounded-3xl shadow-lg">
+              <h3 className="text-lg sm:text-xl font-medium text-[#6C7A52] mb-4 sm:mb-6">
                 ¿Qué sucede después?
               </h3>
               
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-[#4FEF8B] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 bg-[#4FEF8B] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <span className="text-white text-xs font-bold">1</span>
                   </div>
-                  <p className="text-gray-700">Revisaré tu mensaje en las próximas 24-48 horas.</p>
+                  <p className="text-sm sm:text-base text-gray-700">Revisaré tu mensaje en las próximas 24-48 horas.</p>
                 </div>
                 
                 <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-[#4FEF8B] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 bg-[#4FEF8B] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <span className="text-white text-xs font-bold">2</span>
                   </div>
-                  <p className="text-gray-700">Te contactaré para agendar una conversación inicial gratuita.</p>
+                  <p className="text-sm sm:text-base text-gray-700">Te contactaré para agendar una conversación inicial gratuita.</p>
                 </div>
                 
                 <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-[#4FEF8B] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 bg-[#4FEF8B] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <span className="text-white text-xs font-bold">3</span>
                   </div>
-                  <p className="text-gray-700">Juntos definiremos el proceso que mejor se alinea a tu momento y necesidades.</p>
+                  <p className="text-sm sm:text-base text-gray-700">Juntos definiremos el proceso que mejor se alinea a tu momento y necesidades.</p>
                 </div>
               </div>
             </div>
 
             {/* Final CTA */}
-            <div className="bg-[#A7D3C1]/20 p-6 rounded-2xl text-center">
-              <p className="text-lg text-[#6C7A52] font-medium mb-4">
+            <div className="bg-[#A7D3C1]/20 p-4 sm:p-6 rounded-2xl text-center">
+              <p className="text-base sm:text-lg text-[#6C7A52] font-medium mb-3 sm:mb-4">
                 Tu transformación comienza con una conversación.
               </p>
               
               <a
                 href="#"
-                className="inline-flex items-center border-2 border-[#6C7A52] text-[#6C7A52] px-6 py-3 rounded-full font-medium hover:bg-[#6C7A52] hover:text-white transition-all duration-300"
+                className="inline-flex items-center border-2 border-[#6C7A52] text-[#6C7A52] px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium hover:bg-[#6C7A52] hover:text-white transition-all duration-300 text-sm sm:text-base"
               >
                 Agenda tu sesión
               </a>

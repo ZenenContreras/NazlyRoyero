@@ -1,33 +1,33 @@
-import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Introduction from './components/Introduction';
-import Proposal from './components/Proposal';
-import About from './components/About';
-import Method from './components/Method';
-import Services from './components/Services';
-import Blog from './components/Blog';
-import Podcast from './components/Podcast';
-import Resources from './components/Resources';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Header, Footer, HomePage, AboutPage, MethodPage, ServicesPage, BlogPage, PodcastPage, ResourcesPage, ContactPage } from './components';
+import { useScrollToSection } from './hooks/useScrollToSection';
 
-function App() {
+function AppContent() {
+  useScrollToSection();
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <Hero />
-      <Introduction />
-      <Proposal />
-      <About />
-      <Method />
-      <Services />
-      <Blog />
-      <Podcast />
-      <Resources />
-      <Contact />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/sobre-mi" element={<AboutPage />} />
+        <Route path="/metodo" element={<MethodPage />} />
+        <Route path="/servicios" element={<ServicesPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/podcast" element={<PodcastPage />} />
+        <Route path="/recursos" element={<ResourcesPage />} />
+        <Route path="/contacto" element={<ContactPage />} />
+      </Routes>
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 
