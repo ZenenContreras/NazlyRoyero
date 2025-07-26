@@ -86,18 +86,17 @@ export default function Header() {
     if (href !== '/' && location.pathname === href) return true;
     if (href.startsWith('#') && location.hash === href && location.pathname === '/') return true;
     return false;
-  };
-  return (
+  };  return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-[#6C7A52]/95 backdrop-blur-sm shadow-lg' 
-        : 'bg-[#6C7A52]/90 backdrop-blur-sm'
+        ? 'bg-[#6C7A52]/80 backdrop-blur-sm shadow-lg' 
+        : 'bg-[#6C7A52]/60 backdrop-blur-sm'
     }`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center"> 
             <img 
               src="/images/LogoBlanco.png" 
               alt="Nazly Royero" 
