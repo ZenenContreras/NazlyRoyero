@@ -71,16 +71,14 @@ export default function Header() {
     }
     setIsMenuOpen(false);
   }, [location.pathname]);
-
   const menuItems: MenuItemType[] = [
-    { name: 'Inicio', href: '/', isExternal: false },
-    { name: 'Sobre mí', href: '#sobre-mi', isExternal: true },
-    { name: 'Método', href: '#metodo', isExternal: true },
-    { name: 'Servicios', href: '#servicios', isExternal: true },
-    { name: 'Blog', href: '/blog', isExternal: false },
-    { name: 'Podcast', href: '/podcast', isExternal: false },
-    { name: 'Recursos', href: '/recursos', isExternal: false },
-    { name: 'Contacto', href: '#contacto', isExternal: true },
+    { name: 'SOBRE MÍ', href: '#sobre-mi', isExternal: true },
+    { name: 'MÉTODO ESTRELLA', href: '#metodo', isExternal: true },
+    { name: 'MÉTODO C.A.S.A', href: '/metodo-casa', isExternal: false },
+    { name: 'BLOG', href: '/blog', isExternal: false },
+    { name: 'PODCAST', href: '/podcast', isExternal: false },
+    { name: 'RECURSOS', href: '/recursos', isExternal: false },
+    { name: 'CONVERSEMOS', href: '#contacto', isExternal: true },
   ];
 
   const isActivePage = (href: string) => {
@@ -89,12 +87,11 @@ export default function Header() {
     if (href.startsWith('#') && location.hash === href && location.pathname === '/') return true;
     return false;
   };
-
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-white/95 backdrop-blur-sm shadow-sm' 
-        : 'bg-white/90 backdrop-blur-sm'
+        ? 'bg-[#6C7A52]/95 backdrop-blur-sm shadow-lg' 
+        : 'bg-[#6C7A52]/90 backdrop-blur-sm'
     }`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
@@ -102,14 +99,14 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src="/images/3.png" 
+              src="/images/LogoBlanco.png" 
               alt="Nazly Royero" 
-              className="h-8 lg:h-9 w-auto opacity-90 hover:opacity-100 transition-opacity duration-200"
+              className="h-10 lg:h-12 w-auto opacity-90 hover:opacity-100 transition-opacity duration-200"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6">
             {menuItems.map((item) => {
               const isActive = isActivePage(item.href);
               
@@ -119,10 +116,10 @@ export default function Header() {
                     key={item.name}
                     href={item.href}
                     onClick={(e) => handleSectionNavigation(item.href, e)}
-                    className={`text-sm transition-colors duration-200 ${
+                    className={`text-xs font-medium tracking-wide transition-colors duration-200 ${
                       isActive 
-                        ? 'text-gray-900' 
-                        : 'text-gray-600 hover:text-gray-900'
+                        ? 'text-[#D9A689]' 
+                        : 'text-white hover:text-[#D9A689]'
                     }`}
                   >
                     {item.name}
@@ -133,10 +130,10 @@ export default function Header() {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`text-sm transition-colors duration-200 ${
+                    className={`text-xs font-medium tracking-wide transition-colors duration-200 ${
                       isActive 
-                        ? 'text-gray-900' 
-                        : 'text-gray-600 hover:text-gray-900'
+                        ? 'text-[#D9A689]' 
+                        : 'text-white hover:text-[#D9A689]'
                     }`}
                   >
                     {item.name}
@@ -146,21 +143,20 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Desktop CTA */}
+          {/* Desktop CTA - LOGIN */}
           <div className="hidden lg:flex">
-            <a
-              href="#contacto"
-              onClick={(e) => handleSectionNavigation('#contacto', e)}
-              className="text-gray-700 hover:text-gray-900 text-sm px-4 py-2 border border-gray-200 hover:border-gray-300 rounded-full transition-all duration-200"
+            <Link
+              to="/login"
+              className="text-white hover:text-[#D9A689] text-xs font-medium tracking-wide px-4 py-2 border border-white/30 hover:border-[#D9A689] rounded-full transition-all duration-200"
             >
-              Contacto
-            </a>
+              LOGIN
+            </Link>
           </div>
 
           {/* Mobile menu button */}
           <button
             onClick={toggleMenu}
-            className="lg:hidden p-2 text-gray-500 hover:text-gray-700 transition-colors duration-200"
+            className="lg:hidden p-2 text-white hover:text-[#D9A689] transition-colors duration-200"
             aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
@@ -186,7 +182,7 @@ export default function Header() {
             isMenuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="py-4 border-t border-gray-100">
+          <div className="py-4 border-t border-white/20">
             <nav className="flex flex-col space-y-2">
               {menuItems.map((item) => {
                 const isActive = isActivePage(item.href);
@@ -197,10 +193,10 @@ export default function Header() {
                       key={item.name}
                       href={item.href}
                       onClick={(e) => handleSectionNavigation(item.href, e)}
-                      className={`px-3 py-2 text-base transition-colors duration-200 ${
+                      className={`px-3 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
                         isActive 
-                          ? 'text-gray-900' 
-                          : 'text-gray-600 hover:text-gray-900'
+                          ? 'text-[#D9A689]' 
+                          : 'text-white hover:text-[#D9A689]'
                       }`}
                     >
                       {item.name}
@@ -211,10 +207,10 @@ export default function Header() {
                     <Link
                       key={item.name}
                       to={item.href}
-                      className={`px-3 py-2 text-base transition-colors duration-200 ${
+                      className={`px-3 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
                         isActive 
-                          ? 'text-gray-900' 
-                          : 'text-gray-600 hover:text-gray-900'
+                          ? 'text-[#D9A689]' 
+                          : 'text-white hover:text-[#D9A689]'
                       }`}
                     >
                       {item.name}
@@ -223,15 +219,14 @@ export default function Header() {
                 }
               })}
               
-              {/* Mobile CTA */}
-              <div className="pt-3 mt-2 border-t border-gray-100">
-                <a
-                  href="#contacto"
-                  onClick={(e) => handleSectionNavigation('#contacto', e)}
-                  className="block text-center px-3 py-2 text-gray-700 hover:text-gray-900 text-base border border-gray-200 hover:border-gray-300 rounded-full transition-all duration-200 mx-3"
+              {/* Mobile CTA - LOGIN */}
+              <div className="pt-3 mt-2 border-t border-white/20">
+                <Link
+                  to="/login"
+                  className="block text-center px-3 py-2 text-white hover:text-[#D9A689] text-sm font-medium tracking-wide border border-white/30 hover:border-[#D9A689] rounded-full transition-all duration-200 mx-3"
                 >
-                  Contacto
-                </a>
+                  LOGIN
+                </Link>
               </div>
             </nav>
           </div>

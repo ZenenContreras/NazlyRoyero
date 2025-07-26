@@ -22,7 +22,7 @@ const Footer = () => {
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center mb-4 sm:mb-6">
               <img 
-                src="/images/3.png" 
+                src="/images/LogoBlanco.png" 
                 alt="Nazly Royero" 
                 className="h-12 sm:h-14 md:h-16 w-auto filter brightness-0 invert"
               />
