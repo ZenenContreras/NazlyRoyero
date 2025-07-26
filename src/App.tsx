@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Header, Footer, HomePage, AboutPage, MethodPage, ServicesPage, BlogPage, PodcastPage, ResourcesPage, ContactPage, LoginPage, RegisterPage } from './components';
+import { Header, Footer } from './components/layout';
+import { HomePage, AboutPage, MethodPage, ServicesPage, BlogPage, PodcastPage, ResourcesPage, ContactPage, LoginPage, RegisterPage } from './components/pages';
 import { useScrollToSection } from './hooks/useScrollToSection';
 
 function AppContent() {
