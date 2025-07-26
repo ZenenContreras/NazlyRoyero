@@ -1,17 +1,108 @@
 import { ArrowRight, Star, User, Users, BookOpen, Headphones, Edit3 } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const HomePage = () => {
+  // Carousel state for background images
+  const carouselImages = [
+    'Carrusel Inicio 1.jpeg',
+    'Carrusel inicio 2.jpeg',
+    'Carrusel Inicio 4.jpeg',
+    'Carrusel - Inicio 6.jpeg',
+    'Carrusel Inicio 7.jpeg',
+    'Carrusel Inicio 8.jpeg',
+    'Carrusel _Inicio 12.jpeg',
+    'Carrusel inicio - 13.jpeg'
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === carouselImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [carouselImages.length]);
+
   return (
-    <div className="min-h-screen bg-white">{/* Hero Section with Text Only */}
+    <div className="min-h-screen bg-white">      {/* Hero Section with Background Carousel */}
       <section id="inicio" className="h-screen flex items-center justify-center relative overflow-hidden pt-16 md:pt-20 bg-white">
+          {/* Background Images - Right Side */}
+        <div className="absolute inset-0 z-0 flex">
+          {/* Left transparent area with stronger gradient */}
+          <div className="w-1/2 bg-gradient-to-r from-white via-white/98 to-white/85"></div>
+            {/* Right image area */}
+          <div className="w-1/2 relative overflow-hidden">
+            {carouselImages.map((image, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 transition-opacity duration-1000 flex items-center justify-center ${
+                  index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <img
+                  src={`/images/${image}`}
+                  alt={`Background carousel image ${index + 1}`}
+                  className="h-full w-auto object-contain max-w-none"
+                />
+              </div>
+            ))}
+            
+            {/* Multiple layer left gradient fade - dramatic blending with text area */}
+            <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-white via-white/90 via-white/70 to-white/30 pointer-events-none z-10"></div>
+            <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-white via-white/95 to-white/60 pointer-events-none z-11"></div>
+            <div className="absolute left-0 top-0 w-16 h-full bg-gradient-to-r from-white via-white/98 to-transparent pointer-events-none z-12"></div>
+              {/* Enhanced right gradient fade - stronger edge softening */}
+            <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-white via-white/80 via-white/50 to-transparent pointer-events-none z-10"></div>
+            <div className="absolute right-0 top-0 w-12 h-full bg-gradient-to-l from-white/95 via-white/70 to-transparent pointer-events-none z-11"></div>
+            
+            {/* Vertical fade for left side - elegant vertical integration */}
+            <div className="absolute left-0 top-0 h-24 w-full bg-gradient-to-b from-white via-white/85 via-white/60 to-transparent pointer-events-none z-10"></div>
+            <div className="absolute left-0 top-0 h-16 w-full bg-gradient-to-b from-white/95 via-white/75 to-transparent pointer-events-none z-11"></div>
+            <div className="absolute left-0 top-0 h-8 w-full bg-gradient-to-b from-white/98 to-transparent pointer-events-none z-12"></div>
+            
+            {/* Vertical fade for left side bottom - elegant vertical integration */}
+            <div className="absolute left-0 bottom-0 h-24 w-full bg-gradient-to-t from-white via-white/85 via-white/60 to-transparent pointer-events-none z-10"></div>
+            <div className="absolute left-0 bottom-0 h-16 w-full bg-gradient-to-t from-white/95 via-white/75 to-transparent pointer-events-none z-11"></div>
+            <div className="absolute left-0 bottom-0 h-8 w-full bg-gradient-to-t from-white/98 to-transparent pointer-events-none z-12"></div>
+            
+            {/* Vertical fade for right side - elegant vertical integration */}
+            <div className="absolute right-0 top-0 h-24 w-full bg-gradient-to-b from-white via-white/85 via-white/60 to-transparent pointer-events-none z-10"></div>
+            <div className="absolute right-0 top-0 h-16 w-full bg-gradient-to-b from-white/95 via-white/75 to-transparent pointer-events-none z-11"></div>
+            <div className="absolute right-0 top-0 h-8 w-full bg-gradient-to-b from-white/98 to-transparent pointer-events-none z-12"></div>
+            
+            {/* Vertical fade for right side bottom - elegant vertical integration */}
+            <div className="absolute right-0 bottom-0 h-24 w-full bg-gradient-to-t from-white via-white/85 via-white/60 to-transparent pointer-events-none z-10"></div>
+            <div className="absolute right-0 bottom-0 h-16 w-full bg-gradient-to-t from-white/95 via-white/75 to-transparent pointer-events-none z-11"></div>
+            <div className="absolute right-0 bottom-0 h-8 w-full bg-gradient-to-t from-white/98 to-transparent pointer-events-none z-12"></div>
+            
+            {/* Enhanced top gradient fade - elegant top integration */}
+            <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white via-white/85 via-white/60 to-transparent pointer-events-none z-10"></div>
+            <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-white/95 via-white/75 to-transparent pointer-events-none z-11"></div>
+            <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-white/98 to-transparent pointer-events-none z-12"></div>
+            
+            {/* Enhanced bottom gradient fade - elegant bottom integration */}
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white via-white/85 via-white/60 to-transparent pointer-events-none z-10"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white/95 via-white/75 to-transparent pointer-events-none z-11"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white/98 to-transparent pointer-events-none z-12"></div>
+            
+            {/* Corner fade enhancements for perfect integration */}
+            <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-white via-white/90 to-transparent pointer-events-none z-13"></div>
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-white via-white/90 to-transparent pointer-events-none z-13"></div>
+            <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-white via-white/80 to-transparent pointer-events-none z-13"></div>
+            <div className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-white via-white/80 to-transparent pointer-events-none z-13"></div>
+          </div>
+        </div>
         
         {/* Content Container */}
         <div className="relative z-20 w-full h-full flex items-center">
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-center h-full">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center h-full">
               
-              {/* Text Content - Centered */}
-              <div className="text-center space-y-4 md:space-y-6">
+              {/* Text Content - Left Side */}
+              <div className="space-y-4 md:space-y-6">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight">
                   {/* Activa tu máximo potencial */}
                   <span className="block mb-2 lg:mb-3">
@@ -39,6 +130,9 @@ const HomePage = () => {
                   </span>
                 </h1>
               </div>
+
+              {/* Right Side - Space for images */}
+              <div className="hidden lg:block"></div>
             </div>
           </div>
         </div>
