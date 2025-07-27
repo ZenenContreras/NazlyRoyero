@@ -123,7 +123,7 @@ const HomePage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center h-full">
               
               {/* Text Content - Mobile: centered, Desktop: Left Side */}
-              <div className="space-y-3 md:space-y-4 lg:space-y-6 text-center lg:text-left lg:col-span-1">
+              <div className="space-y-6 md:space-y-4 lg:space-y-6 text-left lg:text-left lg:col-span-1">
                 <h1 className="text-3xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl leading-tight lg:leading-tight">
                   {/* Activa tu máximo potencial */}
                   <span className="block mb-1 sm:mb-2 lg:mb-3">
