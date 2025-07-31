@@ -12,6 +12,20 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Configuración para SPA routing
+      (function() {
+        var path = window.location.pathname;
+        var query = window.location.search;
+        var hash = window.location.hash;
+        
+        // Si la página se carga directamente en una ruta específica,
+        // asegurarse de que React Router maneje la navegación
+        if (path !== '/' && !sessionStorage.getItem('spa-loaded')) {
+          sessionStorage.setItem('spa-loaded', 'true');
+        }
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
