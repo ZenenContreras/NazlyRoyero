@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header, Footer } from './components/layout';
-import { HomePage, AboutPage, MethodPage, MethodCasaPage, ServicesPage, BlogPage, PodcastPage, ResourcesPage, ContactPage, LoginPage, RegisterPage } from './components/pages';
+import ErrorBoundary from './components/ErrorBoundary';
+import { HomePage, AboutPage, MethodPage, MethodCasaPage, ServicesPage, BlogPage, PodcastPage, ResourcesPage, ContactPage, LoginPage, RegisterPage, NotFoundPage } from './components/pages';
 import { useScrollToSection } from './hooks/useScrollToSection';
 
 function AppContent() {
@@ -21,6 +22,8 @@ function AppContent() {
         <Route path="/contacto" element={<ContactPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/registro" element={<RegisterPage />} />
+        {/* Ruta catch-all para 404 */}
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
     </div>
@@ -29,9 +32,11 @@ function AppContent() {
 
 function App() {
   return (
-    <Router>
-      <AppContent />
-    </Router>
+    <ErrorBoundary>
+      <Router>
+        <AppContent />
+      </Router>
+    </ErrorBoundary>
   );
 }
 

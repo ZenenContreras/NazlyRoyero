@@ -149,7 +149,7 @@ const MethodCasaPage = () => {
             <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="bg-gradient-to-br from-[#A7D3C1]/10 to-[#6C7A52]/5 p-6 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl shadow-lg border border-gray-100">
                 <img
-                src="public\images\metodoCasa\MétodoCASA.png"
+                src="\images\metodoCasa\MétodoCASA.png"
                 alt="Método C.A.S.A. - Conexión, Aprendizaje, Sinergia y Adaptación"
                 className="w-full max-w-xs sm:max-w-sm  mx-auto h-auto"
                 />
