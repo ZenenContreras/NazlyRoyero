@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 interface MenuItemType {
@@ -44,49 +44,24 @@ export default function Header() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isMenuOpen]);
-
   const toggleMenu = useCallback(() => {
     setIsMenuOpen(prev => !prev);
-  }, []);
-
-  const handleSectionNavigation = useCallback((href: string, e?: React.MouseEvent) => {
-    if (href.startsWith('#')) {
-      e?.preventDefault();
-      
-      if (location.pathname === '/') {
-        const element = document.querySelector(href);
-        if (element) {
-          const headerHeight = 80;
-          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-          const offsetPosition = elementPosition - headerHeight;
-          
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }
-      } else {
-        window.location.href = `/${href}`;
-      }
-    }
-    setIsMenuOpen(false);
-  }, [location.pathname]);
-  const menuItems: MenuItemType[] = [
-    { name: 'SOBRE MÍ', href: '#sobre-mi', isExternal: true },
-    { name: 'MÉTODO ESTRELLA', href: '#metodo', isExternal: true },
+  }, []);  const menuItems: MenuItemType[] = [
+    { name: 'SOBRE MÍ', href: '/sobre-mi', isExternal: false },
+    { name: 'MÉTODO ESTRELLA', href: '/metodo-estrella', isExternal: false },
     { name: 'MÉTODO C.A.S.A', href: '/metodo-casa', isExternal: false },
     { name: 'BLOG', href: '/blog', isExternal: false },
     { name: 'PODCAST', href: '/podcast', isExternal: false },
     { name: 'RECURSOS', href: '/recursos', isExternal: false },
-    { name: 'CONVERSEMOS', href: '#contacto', isExternal: true },
-  ];
+    { name: 'CONVERSEMOS', href: '/contacto', isExternal: false },  ];
 
   const isActivePage = (href: string) => {
     if (href === '/' && location.pathname === '/') return true;
     if (href !== '/' && location.pathname === href) return true;
-    if (href.startsWith('#') && location.hash === href && location.pathname === '/') return true;
     return false;
-  };  return (
+  };
+
+  return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
         ? 'bg-[#6C7A52]/80 backdrop-blur-sm shadow-lg' 
@@ -102,43 +77,24 @@ export default function Header() {
               alt="Nazly Royero" 
               className="h-10 lg:h-12 w-auto opacity-90 hover:opacity-100 transition-opacity duration-200"
             />
-          </Link>
-
-          {/* Desktop Navigation */}
+          </Link>          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
             {menuItems.map((item) => {
               const isActive = isActivePage(item.href);
               
-              if (item.isExternal) {
-                return (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    onClick={(e) => handleSectionNavigation(item.href, e)}
-                    className={`text-xs font-medium tracking-wide transition-colors duration-200 ${
-                      isActive 
-                        ? 'text-[#D9A689]' 
-                        : 'text-white hover:text-[#D9A689]'
-                    }`}
-                  >
-                    {item.name}
-                  </a>
-                );
-              } else {
-                return (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className={`text-xs font-medium tracking-wide transition-colors duration-200 ${
-                      isActive 
-                        ? 'text-[#D9A689]' 
-                        : 'text-white hover:text-[#D9A689]'
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                );
-              }
+              return (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`text-xs font-medium tracking-wide transition-colors duration-200 ${
+                    isActive 
+                      ? 'text-[#D9A689]' 
+                      : 'text-white hover:text-[#D9A689]'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
             })}
           </nav>
 
@@ -181,41 +137,23 @@ export default function Header() {
             isMenuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="py-4 border-t border-white/20">
-            <nav className="flex flex-col space-y-2">
+          <div className="py-4 border-t border-white/20">            <nav className="flex flex-col space-y-2">
               {menuItems.map((item) => {
                 const isActive = isActivePage(item.href);
                 
-                if (item.isExternal) {
-                  return (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      onClick={(e) => handleSectionNavigation(item.href, e)}
-                      className={`px-3 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
-                        isActive 
-                          ? 'text-[#D9A689]' 
-                          : 'text-white hover:text-[#D9A689]'
-                      }`}
-                    >
-                      {item.name}
-                    </a>
-                  );
-                } else {
-                  return (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      className={`px-3 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
-                        isActive 
-                          ? 'text-[#D9A689]' 
-                          : 'text-white hover:text-[#D9A689]'
-                      }`}
-                    >
-                      {item.name}
-                    </Link>
-                  );
-                }
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`px-3 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
+                      isActive 
+                        ? 'text-[#D9A689]' 
+                        : 'text-white hover:text-[#D9A689]'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                );
               })}
               
               {/* Mobile CTA - LOGIN */}

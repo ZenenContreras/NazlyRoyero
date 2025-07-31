@@ -50,7 +50,7 @@ const BlogPage = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center mb-4 sm:mb-6">
             <BookOpen className="text-[#6C7A52] mr-0 sm:mr-3 mb-2 sm:mb-0" size={32} />
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 text-center">
-              INARA | <span className="text-[#6C7A52] font-medium">Blog & Newsletter</span>
+              INARA | <span className="text-[#6C7A52] font-medium">Blog</span>
             </h2>
           </div>
           
@@ -75,52 +75,9 @@ const BlogPage = () => {
                 <p>→ ¿Cómo convierto lo vivido en mi mayor activo personal y profesional?</p>
               </div>
             </div>
-            
-            <p>
-              INARA | De la raíz al legado es un espacio creado para acompañarte en
-              esos puntos de inflexión. Aquí comparto reflexiones, aprendizajes y
-              herramientas para quienes están transitando procesos de transformación
-              personal, profesional o vital.
-            </p>
           </div>
         </div>
 
-        {/* What you'll find */}
-        <div className="bg-white p-6 sm:p-8 rounded-3xl shadow-lg mb-12 sm:mb-16">
-          <h3 className="text-xl sm:text-2xl font-medium text-[#6C7A52] mb-4 sm:mb-6 text-center">
-            ¿Qué encuentras en INARA?
-          </h3>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-            <div className="text-center">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#4FEF8B]/20 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
-                <span className="text-lg sm:text-2xl">🌱</span>
-              </div>
-              <p className="text-gray-700 text-xs sm:text-sm">Reflexiones profundas para navegar tus procesos de cambio.</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#D9A689]/20 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
-                <span className="text-lg sm:text-2xl">🛠️</span>
-              </div>
-              <p className="text-gray-700 text-xs sm:text-sm">Herramientas prácticas para tu reinvención personal y profesional.</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#A7D3C1]/20 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
-                <span className="text-lg sm:text-2xl">💬</span>
-              </div>
-              <p className="text-gray-700 text-xs sm:text-sm">Conversaciones sobre propósito, bienestar, aprendizaje y legado.</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#6C7A52]/20 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
-                <span className="text-lg sm:text-2xl">🤝</span>
-              </div>
-              <p className="text-gray-700 text-xs sm:text-sm">Una comunidad de personas que eligen evolucionar de manera consciente.</p>
-            </div>
-          </div>
-        </div>
 
         {/* Blog Posts */}
         <div className="mb-12 sm:mb-16">

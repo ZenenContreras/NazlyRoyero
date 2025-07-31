@@ -186,7 +186,7 @@ const HomePage = () => {
                 </p>
                 
                 <a
-                  href="#servicios"
+                  href="/metodo-estrella"
                   className="inline-flex items-center bg-gradient-to-r from-[#C2A14D] to-[#D9A689] text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full text-sm sm:text-base md:text-lg font-medium hover:from-[#D9A689] hover:to-[#C2A14D] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 group"
                 >
                   Descubre lo que hay para ti
@@ -220,7 +220,7 @@ const HomePage = () => {
                 </p>
                 
                 <a
-                  href="#servicios"
+                  href="/metodo-casa"
                   className="inline-flex items-center bg-[#4F8F8B] text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full text-sm sm:text-base md:text-lg font-medium hover:bg-[#6C7A52] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 group"
                 >
                   Impulsa el crecimiento de tu equipo
