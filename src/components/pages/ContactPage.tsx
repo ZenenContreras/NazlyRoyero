@@ -36,7 +36,7 @@ const ContactPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-white pt-16">
       
       {/* Hero Section - Título Principal */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-[#4F8F8B]/10 to-white animate-in fade-in duration-500">
