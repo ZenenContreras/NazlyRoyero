@@ -8,7 +8,7 @@ const PodcastPage = () => {
       subtitle: "🌟",
       description: "Explora ese momento decisivo cuando algo dentro de ti hace click y empiezas a moverte hacia tu transformación.",
       duration: "42 min",
-      date: "20 Mar 2024",
+      date: "7 Agosto 2025",
       image: "/images/podcast/episodio1.png"
     },
     {
@@ -17,7 +17,7 @@ const PodcastPage = () => {
       subtitle: "🌪️",
       description: "Esa sensación de vértigo que aparece cuando decidimos cambiar, y cómo navegarla con confianza y propósito.",
       duration: "38 min",
-      date: "13 Mar 2024",
+      date: "Proximamente ",
       image: "/images/podcast/episodio2.png"
     },
     {
@@ -26,7 +26,7 @@ const PodcastPage = () => {
       subtitle: "🧳",
       description: "Los elementos esenciales que necesitas para hacer la transición hacia quien estás destinado a ser.",
       duration: "45 min",
-      date: "6 Mar 2024",
+      date: "proximamente",
       image: "/images/podcast/episodio3.png"
     }
   ];
@@ -204,7 +204,7 @@ const PodcastPage = () => {
                     <div className="text-gray-500">Episodios</div>
                   </div>
                   <div className="text-center">
-                    <div className="font-medium text-[#6C7A52]">2024</div>
+                    <div className="font-medium text-[#6C7A52]">2025</div>
                     <div className="text-gray-500">Año</div>
                   </div>
                   <div className="text-center">
