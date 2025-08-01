@@ -39,7 +39,7 @@ const ContactPage = () => {
     <div className="min-h-screen bg-white pt-16">
       
       {/* Hero Section - Título Principal */}
-      <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-br from-[#4F8F8B]/10 to-white animate-in fade-in duration-500">
+      <section className="pt-16 pb-8 bg-gradient-to-br from-[#4F8F8B]/10 to-white animate-in fade-in duration-500">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 animate-in slide-in-from-bottom-4 duration-700">
             <span className="bg-gradient-to-r from-[#6C7A52] via-[#4F8F8B] to-[#D9A689] bg-clip-text text-transparent">
