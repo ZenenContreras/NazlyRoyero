@@ -53,7 +53,8 @@ export default function Header() {
     { name: 'BLOG', href: '/blog', isExternal: false },
     { name: 'PODCAST', href: '/podcast', isExternal: false },
     { name: 'RECURSOS', href: '/recursos', isExternal: false },
-    { name: 'CONVERSEMOS', href: '/contacto', isExternal: false },  ];
+    { name: 'CONVERSEMOS', href: '/contacto', isExternal: false },
+  ];
 
   const isActivePage = (href: string) => {
     if (href === '/' && location.pathname === '/') return true;
@@ -86,25 +87,31 @@ export default function Header() {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`text-xs font-medium tracking-wide transition-colors duration-200 ${
+                  className={`relative text-xs font-medium tracking-wide transition-all duration-300 group ${
                     isActive 
                       ? 'text-[#D9A689]' 
                       : 'text-white hover:text-[#D9A689]'
                   }`}
                 >
                   {item.name}
+                  {/* Active indicator line */}
+                  <span className={`absolute left-0 right-0 bottom-[-8px] h-0.5 bg-[#D9A689] transition-all duration-300 ${
+                    isActive 
+                      ? 'opacity-100 scale-x-100' 
+                      : 'opacity-0 scale-x-0 group-hover:opacity-50 group-hover:scale-x-100'
+                  }`}></span>
                 </Link>
               );
             })}
           </nav>
 
-          {/* Desktop CTA - LOGIN */}
-          <div className="hidden lg:flex">
+          {/* Desktop CTA - LOGIN & REGISTER */}
+          <div className="hidden lg:flex items-center space-x-3">
             <Link
               to="/login"
-              className="text-white hover:text-[#D9A689] text-xs font-medium tracking-wide px-4 py-2 border border-white/30 hover:border-[#D9A689] rounded-full transition-all duration-200"
+              className="bg-[#D9A689] text-white hover:bg-[#D9A689]/90 text-xs font-medium tracking-wide px-4 py-2 rounded-full transition-all duration-200"
             >
-              LOGIN
+              INICIAR SESIÓN
             </Link>
           </div>
 
@@ -133,37 +140,64 @@ export default function Header() {
         {/* Mobile Navigation */}
         <div 
           id="mobile-menu"
-          className={`lg:hidden overflow-hidden transition-all duration-300 ${
-            isMenuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
+          className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="py-4 border-t border-white/20">            <nav className="flex flex-col space-y-2">
-              {menuItems.map((item) => {
+          <div className="py-6 border-t border-white/20 bg-[#6C7A52]/95 backdrop-blur-sm">
+            <nav className="flex flex-col space-y-1">
+              {menuItems.map((item, index) => {
                 const isActive = isActivePage(item.href);
                 
                 return (
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`px-3 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
+                    className={`relative px-4 py-3 text-sm font-medium tracking-wide transition-all duration-300 group ${
                       isActive 
-                        ? 'text-[#D9A689]' 
-                        : 'text-white hover:text-[#D9A689]'
+                        ? 'text-[#D9A689] bg-white/10' 
+                        : 'text-white hover:text-[#D9A689] hover:bg-white/5'
                     }`}
+                    style={{
+                      animationDelay: `${index * 50}ms`
+                    }}
                   >
-                    {item.name}
+                    <div className="flex items-center justify-between">
+                      <span>{item.name}</span>
+                      {/* Active indicator */}
+                      <div className={`w-2 h-2 rounded-full bg-[#D9A689] transition-all duration-300 ${
+                        isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
+                      }`}></div>
+                    </div>
+                    {/* Bottom line indicator */}
+                    <span className={`absolute left-4 right-4 bottom-0 h-0.5 bg-[#D9A689] transition-all duration-300 ${
+                      isActive 
+                        ? 'opacity-100 scale-x-100' 
+                        : 'opacity-0 scale-x-0 group-hover:opacity-30 group-hover:scale-x-100'
+                    }`}></span>
                   </Link>
                 );
               })}
               
-              {/* Mobile CTA - LOGIN */}
-              <div className="pt-3 mt-2 border-t border-white/20">
-                <Link
-                  to="/login"
-                  className="block text-center px-3 py-2 text-white hover:text-[#D9A689] text-sm font-medium tracking-wide border border-white/30 hover:border-[#D9A689] rounded-full transition-all duration-200 mx-3"
-                >
-                  LOGIN
-                </Link>
+              {/* Mobile Auth Section */}
+              <div className="pt-4 mt-4 border-t border-white/20 px-4">
+                <div className="space-y-3">
+                  {/* Login Button */}
+                  <Link
+                    to="/login"
+                    className="block w-full text-center py-3 px-4 bg-transparent border border-[#D9A689] text-[#D9A689] hover:bg-[#D9A689] hover:text-white rounded-full transition-all duration-300 text-sm font-medium tracking-wide"
+                  >
+                    INICIAR SESIÓN
+                  </Link>
+                  
+                  {/* Register Button */}
+                  <Link
+                    to="/register"
+                    className="block w-full text-center py-3 px-4 bg-[#D9A689] text-white hover:bg-[#D9A689]/90 rounded-full transition-all duration-300 text-sm font-medium tracking-wide"
+                  >
+                    REGISTRARSE
+                  </Link>
+                </div>
               </div>
             </nav>
           </div>
@@ -173,7 +207,7 @@ export default function Header() {
       {/* Mobile overlay */}
       {isMenuOpen && (
         <div 
-          className="lg:hidden fixed inset-0 bg-black/5 z-[-1]"
+          className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-[-1] transition-all duration-300"
           onClick={toggleMenu}
         />
       )}

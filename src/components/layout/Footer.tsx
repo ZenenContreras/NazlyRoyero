@@ -94,16 +94,13 @@ const Footer = () => {
         <div className="border-t border-white/20 pt-6 sm:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 lg:space-x-6 text-xs sm:text-sm text-white/70 text-center md:text-left">
-              <span>© 2024 Nazly Royero. Todos los derechos reservados.</span>
+              <span>© 2025 Nazly Royero. Todos los derechos reservados.</span>
               <div className="flex space-x-3 sm:space-x-4">
                 <a href="#" className="hover:text-white transition-colors">Aviso legal</a>
                 <a href="#" className="hover:text-white transition-colors">Política de privacidad</a>
               </div>
             </div>
             
-            <div className="text-xs sm:text-sm text-white/70 text-center">
-              Método Estrella® es una marca registrada
-            </div>
           </div>
         </div>
       </div>

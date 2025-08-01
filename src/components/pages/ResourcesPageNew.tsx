@@ -59,7 +59,7 @@ const ResourcesPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Mobile: Stacked Layout, Desktop: 2 Columns */}
-          <div className="flex flex-col lg:grid lg:grid-cols-1 gap-6 sm:gap-8 lg:gap-12">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
             
             {/* Resources List - Shows first on mobile, left on desktop */}
             <div className="order-2 lg:order-1 animate-in slide-in-from-left-6 duration-700 delay-300">
@@ -136,6 +136,74 @@ const ResourcesPage = () => {
                   </button>
                   <button className="inline-flex items-center justify-center border border-[#D9A689] text-[#D9A689] px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-medium hover:bg-[#D9A689] hover:text-white transition-all duration-300 text-xs sm:text-sm">
                     Ver todos
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Resources Cover & Info - Shows first on mobile, right on desktop */}
+            <div className="order-1 lg:order-2 animate-in slide-in-from-right-6 duration-700 delay-400">
+              <div className="bg-gradient-to-br from-[#D9A689]/10 to-[#6C7A52]/5 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center lg:sticky lg:top-24">
+                
+                {/* Resources Cover */}
+                <div className="relative mb-4 sm:mb-6">
+                  <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 mx-auto bg-gradient-to-br from-[#6C7A52] to-[#D9A689] rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <div className="w-full h-full flex flex-col items-center justify-center text-white p-6 sm:p-8">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 mb-3 sm:mb-4 rounded-full bg-white/20 flex items-center justify-center transform animate-pulse">
+                        <BookOpen size={32} />
+                      </div>
+                      <h3 className="text-lg sm:text-xl font-bold mb-2">RECURSOS</h3>
+                      <p className="text-sm opacity-90">GRATUITOS</p>
+                      <p className="text-xs opacity-75 mt-2">Para tu transformación</p>
+                    </div>
+                  </div>
+                  
+                  {/* Floating Action Button */}
+                  <div className="absolute -bottom-3 sm:-bottom-4 left-1/2 transform -translate-x-1/2">
+                    <button className="w-12 h-12 sm:w-16 sm:h-16 bg-white shadow-2xl rounded-full flex items-center justify-center text-[#D9A689] hover:scale-110 transition-all duration-300 border-4 border-white group">
+                      <Download className="transform group-hover:scale-110 transition-transform duration-200" size={20} />
+                    </button>
+                  </div>
+                </div>
+
+                {/* Resources Info */}
+                <div className="mt-6 sm:mt-8">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-gray-900 mb-2 sm:mb-3">
+                    Biblioteca de Recursos
+                  </h2>
+                  <p className="text-[#D9A689] font-medium mb-3 sm:mb-4 text-sm sm:text-base">
+                    Herramientas para tu expansión consciente.
+                  </p>
+                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed max-w-sm mx-auto">
+                    Guías, masterclasses y contenido exclusivo para acompañarte 
+                    en tu proceso de transformación y crecimiento personal.
+                  </p>
+                </div>
+
+                {/* Stats */}
+                <div className="mt-4 sm:mt-6 flex justify-center space-x-4 sm:space-x-6 text-xs sm:text-sm">
+                  <div className="text-center">
+                    <div className="font-medium text-[#6C7A52]">{resources.length}</div>
+                    <div className="text-gray-500">Recursos</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="font-medium text-[#6C7A52]">100%</div>
+                    <div className="text-gray-500">Gratuito</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="font-medium text-[#6C7A52]">24/7</div>
+                    <div className="text-gray-500">Acceso</div>
+                  </div>
+                </div>
+
+                {/* Main CTA */}
+                <div className="mt-6 sm:mt-8">
+                  <button className="w-full bg-gradient-to-r from-[#6C7A52] to-[#D9A689] text-white px-6 py-3 sm:py-4 rounded-full font-medium hover:shadow-lg transition-all duration-300 text-sm sm:text-base transform hover:scale-105 group">
+                    <span className="flex items-center justify-center">
+                      <Download className="mr-2" size={16} />
+                      Accede a los recursos gratuitos
+                      <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-200" size={16} />
+                    </span>
                   </button>
                 </div>
               </div>
