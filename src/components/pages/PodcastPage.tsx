@@ -38,18 +38,18 @@ const PodcastPage = () => {
       <section className="py-12 bg-gradient-to-br from-[#6C7A52]/10 to-white animate-in fade-in duration-500">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 animate-in slide-in-from-bottom-4 duration-700">
-            <span className="bg-gradient-to-r from-[#6C7A52] via-[#D9A689] to-[#4F8F8B] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#C2A14D] to-[#4F8F8B] bg-clip-text text-transparent">
               EN MOVIMIENTO
             </span>
           </h1>
           <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6 md:mb-8 max-w-4xl mx-auto leading-relaxed animate-in slide-in-from-bottom-4 duration-700 delay-100">
             <span className="text-[#6C7A52] font-semibold">🎧 PODCAST:</span>{" "}
-            <span className="text-gray-700">Nada se detiene,</span>{" "}
-            <span className="text-[#D9A689] font-bold italic">todo se transforma</span>
+            <span className="text-[#4F8F8B]">Nada se detiene,</span>{" "}
+            <span className="text-[#4F8F8B] font-bold italic">todo se transforma</span>
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed animate-in slide-in-from-bottom-4 duration-700 delay-200">
-            <span className="text-[#D9A689] font-medium">Conversaciones sobre transformación, propósito y liderazgo consciente</span>{" "}
-            para construir una vida con intención y bienestar.
+          <p className="text-sm sm:text-base md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed animate-in slide-in-from-bottom-4 duration-700 delay-200">
+            <span className="text-[#C2A14D] font-medium">Conversaciones sobre transformación, propósito y liderazgo consciente para construir una vida con intención y bienestar.</span>
+          
           </p>
         </div>
       </section>

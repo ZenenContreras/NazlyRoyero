@@ -39,7 +39,7 @@ const ContactPage = () => {
     <div className="min-h-screen bg-white pt-16">
       
       {/* Hero Section - Título Principal */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-[#4F8F8B]/10 to-white animate-in fade-in duration-500">
+      <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-br from-[#4F8F8B]/10 to-white animate-in fade-in duration-500">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 animate-in slide-in-from-bottom-4 duration-700">
             <span className="bg-gradient-to-r from-[#6C7A52] via-[#4F8F8B] to-[#D9A689] bg-clip-text text-transparent">
@@ -51,15 +51,11 @@ const ContactPage = () => {
             <span className="text-gray-700">con una</span>{" "}
             <span className="text-[#4F8F8B] font-bold italic">conversación</span>
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed animate-in slide-in-from-bottom-4 duration-700 delay-200">
-            Si este mensaje resonó contigo, si sientes que es momento de activar tu máximo potencial y caminar hacia tu expansión con intención y propósito, 
-            <span className="text-[#4F8F8B] font-medium"> estoy aquí para acompañarte.</span>
-          </p>
         </div>
       </section>
 
       {/* Main Content Section */}
-      <section className="py-6 sm:py-8 md:py-12 bg-white">
+      <section className="py-6 sm:py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Mobile: Stacked Layout, Desktop: 2 Columns */}

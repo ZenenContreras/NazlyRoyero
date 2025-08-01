@@ -301,6 +301,52 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
             
+
+            {/* Podcast Block */}
+            <div className="bg-gradient-to-br from-[#4F8F8B]/10 to-white p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-lg text-center border border-[#4F8F8B]/20">
+                  <div className="w-48 h-48 sm:w-64 sm:h-64 mx-auto bg-gradient-to-br from-[#6C7A52] to-[#4F8F8B] rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img 
+                      src="/images/podcast/portada.png" 
+                      alt="En Movimiento Podcast Cover"
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.parentElement!.innerHTML = `
+                          <div class="w-full h-full flex flex-col items-center justify-center text-white p-6 sm:p-8">
+                            <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 sm:mb-4 rounded-full bg-white/20 flex items-center justify-center transform animate-pulse">
+                              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                              </svg>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-bold mb-2">EN MOVIMIENTO</h3>
+                            <p class="text-sm opacity-90">PODCAST</p>
+                          </div>
+                        `;
+                      }}
+                    />
+                  </div>
+              
+              <h3 className="text-sm sm:text-base md:text-lg lg:text-2xl font-bold text-[#6C7A52] mb-1 sm:mb-2 pt-8">
+                En Movimiento | <span className="tracking-wider text-xs sm:text-sm md:text-base">P O D C A S T</span>
+              </h3>
+              
+              <p className="text-sm sm:text-base md:text-xl text-[#4F8F8B] font-medium mb-2 sm:mb-3 md:mb-4 italic">
+                Nada se detiene, todo se transforma.
+              </p>
+              
+              <p className="text-xs sm:text-sm md:text-lg text-gray-700 mb-3 sm:mb-4 md:mb-6">
+                Conversaciones para crecer, aprender y avanzar, sin detenernos
+              </p>
+              
+              <a
+                href="/podcast"
+                className="inline-flex items-center bg-[#4F8F8B] text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full text-xs sm:text-sm md:text-base font-medium hover:bg-[#6C7A52] transition-colors group"
+              >
+                ESCUCHA AHORA
+                <ArrowRight className="ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" size={14} />
+              </a>
+            </div>
+
             {/* Book Block */}
             <div className="bg-gradient-to-br from-[#D9A689]/10 to-white p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-lg text-center border border-[#D9A689]/20">
               <div className="aspect-[3/4] bg-gradient-to-br from-[#D9A689]/20 to-[#C2A14D]/20 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 md:mb-6 shadow-md">
@@ -313,10 +359,6 @@ const HomePage = () => {
               <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-[#6C7A52] mb-1 sm:mb-2">
                 El poder de reinventarse con INTENCIÓN y SENTIDO
               </h3>
-              
-              <p className="text-sm sm:text-base md:text-lg text-[#C2A14D] font-medium mb-3 sm:mb-4 md:mb-6 italic">
-                Aquí, Ahora y Siempre
-              </p>
               
               <div className="space-y-2 sm:space-y-3">
                 <a
@@ -334,51 +376,20 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Podcast Block */}
-            <div className="bg-gradient-to-br from-[#4F8F8B]/10 to-white p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-lg text-center border border-[#4F8F8B]/20">
-              <div className="relative mb-3 sm:mb-4 md:mb-6">
-                <div className="w-32 sm:w-40 md:w-48 h-40 sm:h-52 md:h-64 mx-auto bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl sm:rounded-3xl p-2 sm:p-3 md:p-4 shadow-xl">
-                  <div className="w-full h-full bg-gradient-to-br from-[#4F8F8B]/20 to-[#6C7A52]/20 rounded-xl sm:rounded-2xl flex items-center justify-center">
-                    <Headphones size={28} className="text-[#4F8F8B]" />
-                  </div>
-                </div>
-              </div>
-              
-              <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-[#6C7A52] mb-1 sm:mb-2">
-                En Movimiento | <span className="tracking-wider text-xs sm:text-sm md:text-base">P O D C A S T</span>
-              </h3>
-              
-              <p className="text-sm sm:text-base md:text-lg text-[#4F8F8B] font-medium mb-2 sm:mb-3 md:mb-4 italic">
-                No temas crecer lentamente; teme solo quedarte quieto
-              </p>
-              
-              <p className="text-xs sm:text-sm md:text-base text-gray-700 mb-3 sm:mb-4 md:mb-6">
-                Conversaciones para crecer, aprender y avanzar, sin detenernos
-              </p>
-              
-              <a
-                href="/podcast"
-                className="inline-flex items-center bg-[#4F8F8B] text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full text-xs sm:text-sm md:text-base font-medium hover:bg-[#6C7A52] transition-colors group"
-              >
-                ESCUCHA AHORA
-                <ArrowRight className="ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" size={14} />
-              </a>
-            </div>
-
             {/* Blog Block */}
             <div className="bg-gradient-to-br from-[#A7D3C1]/10 to-white p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-lg text-center border border-[#A7D3C1]/20 sm:col-span-2 lg:col-span-1">
-              <div className="aspect-[4/3] bg-gradient-to-br from-[#A7D3C1]/20 to-[#6C7A52]/10 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 md:mb-6 shadow-md">
+              <div className="aspect-[1/1] bg-gradient-to-br from-[#A7D3C1]/20 to-[#6C7A52]/10 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 md:mb-6 shadow-md">
                 <div className="text-center text-gray-500">
                   <Edit3 size={28} className="mx-auto mb-1 sm:mb-2 text-[#6C7A52]" />
                   <p className="text-xs">Portada del Blog</p>
                 </div>
               </div>
-              
-              <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-[#6C7A52] mb-1 sm:mb-2">
+
+              <h3 className="text-sm sm:text-base md:text-lg lg:text-2xl font-bold text-[#6C7A52] mb-1 sm:mb-2">
                 INARA | <span className="tracking-wider text-xs sm:text-sm md:text-base">B l o g</span>
               </h3>
               
-              <p className="text-sm sm:text-base md:text-lg text-[#A7D3C1] font-medium mb-2 sm:mb-3 md:mb-4 italic">
+              <p className="text-sm sm:text-base md:text-lg text-[#f3bb9a] font-medium mb-2 sm:mb-3 md:mb-4 italic">
                 De la raíz al legado
               </p>
               
@@ -396,7 +407,8 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </section>      {/* Collaborations Block */}
+      </section> 
+           {/* Collaborations Block */}
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-[#A7D3C1]/5 to-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
