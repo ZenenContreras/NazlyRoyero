@@ -66,7 +66,7 @@ export default function Header() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
         ? 'bg-[#6C7A52]/80 backdrop-blur-sm shadow-lg' 
-        : 'bg-[#6C7A52]/60 backdrop-blur-sm'
+        : 'bg-[#6C7A52]/80 backdrop-blur-sm'
     }`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
@@ -89,13 +89,13 @@ export default function Header() {
                   to={item.href}
                   className={`relative text-xs font-medium tracking-wide transition-all duration-300 group ${
                     isActive 
-                      ? 'text-[#D9A689]' 
-                      : 'text-white hover:text-[#D9A689]'
+                      ? 'text-[#f3bb9a]' 
+                      : 'text-white hover:text-[#f3bb9a]'
                   }`}
                 >
                   {item.name}
                   {/* Active indicator line */}
-                  <span className={`absolute left-0 right-0 bottom-[-8px] h-0.5 bg-[#D9A689] transition-all duration-300 ${
+                  <span className={`absolute left-0 right-0 bottom-[-8px] h-0.5 bg-[#f3bb9a] transition-all duration-300 ${
                     isActive 
                       ? 'opacity-100 scale-x-100' 
                       : 'opacity-0 scale-x-0 group-hover:opacity-50 group-hover:scale-x-100'
@@ -109,7 +109,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center space-x-3">
             <Link
               to="/login"
-              className="bg-[#D9A689] text-white hover:bg-[#D9A689]/90 text-xs font-medium tracking-wide px-4 py-2 rounded-full transition-all duration-200"
+              className="bg-[#f3bb9a] text-white hover:bg-[#f3bb9a]/90 text-xs font-medium tracking-wide px-4 py-2 rounded-full transition-all duration-200"
             >
               INICIAR SESIÓN
             </Link>
@@ -118,7 +118,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             onClick={toggleMenu}
-            className="lg:hidden p-2 text-white hover:text-[#D9A689] transition-colors duration-200"
+            className="lg:hidden p-2 text-white hover:text-[#f3bb9a] transition-colors duration-200"
             aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
@@ -141,11 +141,11 @@ export default function Header() {
         <div 
           id="mobile-menu"
           className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+            isMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="py-6 border-t border-white/20 bg-[#6C7A52]/95 backdrop-blur-sm">
-            <nav className="flex flex-col space-y-1">
+          <div className="py-4">
+            <nav className="flex flex-col space-y-0">
               {menuItems.map((item, index) => {
                 const isActive = isActivePage(item.href);
                 
@@ -153,10 +153,10 @@ export default function Header() {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`relative px-4 py-3 text-sm font-medium tracking-wide transition-all duration-300 group ${
+                    className={`relative px-4 py-2.5 text-sm font-medium tracking-wide transition-all duration-300 group ${
                       isActive 
-                        ? 'text-[#D9A689] bg-white/10' 
-                        : 'text-white hover:text-[#D9A689] hover:bg-white/5'
+                        ? 'text-[#f3bb9a]' 
+                        : 'text-white hover:text-[#f3bb9a]'
                     }`}
                     style={{
                       animationDelay: `${index * 50}ms`
@@ -165,12 +165,12 @@ export default function Header() {
                     <div className="flex items-center justify-between">
                       <span>{item.name}</span>
                       {/* Active indicator */}
-                      <div className={`w-2 h-2 rounded-full bg-[#D9A689] transition-all duration-300 ${
+                      <div className={`w-2 h-2 rounded-full bg-[#f3bb9a] transition-all duration-300 ${
                         isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
                       }`}></div>
                     </div>
                     {/* Bottom line indicator */}
-                    <span className={`absolute left-4 right-4 bottom-0 h-0.5 bg-[#D9A689] transition-all duration-300 ${
+                    <span className={`absolute left-4 right-4 bottom-0 h-0.5 bg-[#f3bb9a] transition-all duration-300 ${
                       isActive 
                         ? 'opacity-100 scale-x-100' 
                         : 'opacity-0 scale-x-0 group-hover:opacity-30 group-hover:scale-x-100'
@@ -180,22 +180,14 @@ export default function Header() {
               })}
               
               {/* Mobile Auth Section */}
-              <div className="pt-4 mt-4 border-t border-white/20 px-4">
-                <div className="space-y-3">
+              <div className="pt-3 mt-3 border-t border-white/20 px-4">
+                <div className="space-y-2.5">
                   {/* Login Button */}
                   <Link
                     to="/login"
-                    className="block w-full text-center py-3 px-4 bg-transparent border border-[#D9A689] text-[#D9A689] hover:bg-[#D9A689] hover:text-white rounded-full transition-all duration-300 text-sm font-medium tracking-wide"
+                    className="block w-full text-center py-2.5 px-4 bg-[#f3bb9a] text-white hover:bg-[#f3bb9a]/90 rounded-full transition-all duration-300 text-sm font-medium tracking-wide"
                   >
                     INICIAR SESIÓN
-                  </Link>
-                  
-                  {/* Register Button */}
-                  <Link
-                    to="/register"
-                    className="block w-full text-center py-3 px-4 bg-[#D9A689] text-white hover:bg-[#D9A689]/90 rounded-full transition-all duration-300 text-sm font-medium tracking-wide"
-                  >
-                    REGISTRARSE
                   </Link>
                 </div>
               </div>
