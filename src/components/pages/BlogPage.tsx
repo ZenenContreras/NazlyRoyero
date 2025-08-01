@@ -1,5 +1,4 @@
-import React from 'react';
-import { BookOpen, Mail, ArrowRight, Calendar, User } from 'lucide-react';
+import { BookOpen, Mail, ArrowRight, Calendar, Clock, ChevronRight } from 'lucide-react';
 
 const BlogPage = () => {
   const blogPosts = [
@@ -43,138 +42,143 @@ const BlogPage = () => {
 
   return (
     <div className="min-h-screen bg-white pt-20">
-      <section id="blog" className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-[#6C7A52]/5 to-[#A7D3C1]/10">
-      <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <div className="flex flex-col sm:flex-row items-center justify-center mb-4 sm:mb-6">
-            <BookOpen className="text-[#6C7A52] mr-0 sm:mr-3 mb-2 sm:mb-0" size={32} />
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 text-center">
-              INARA | <span className="text-[#6C7A52] font-medium">Blog</span>
-            </h2>
-          </div>
+      
+      {/* Hero Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-[#6C7A52]/5 to-[#4F8F8B]/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <p className="text-lg sm:text-xl text-[#D9A689] font-medium mb-6 sm:mb-8">
-            De la raíz al legado
-          </p>
-          
-          <div className="max-w-4xl mx-auto text-base sm:text-lg text-gray-700 leading-relaxed space-y-3 sm:space-y-4">
-            <p>
-              Un espacio para transformar tu historia en propósito, cambio y legado.
-            </p>
-            
-            <p>
-              En algún punto de la vida y de la trayectoria profesional, llega el momento
-              de pausar, mirar hacia adentro y preguntarte:
-            </p>
-            
-            <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-md my-6 sm:my-8">
-              <div className="space-y-2 text-sm sm:text-base text-[#6C7A52] font-medium">
-                <p>→ ¿Qué de mi historia merece ser honrado?</p>
-                <p>→ ¿Qué necesito soltar para seguir creciendo?</p>
-                <p>→ ¿Cómo convierto lo vivido en mi mayor activo personal y profesional?</p>
+          {/* Header */}
+          <div className="text-center mb-16">
+            <div className="flex flex-col items-center mb-8">
+              <div className="relative mb-6">
+                <div className="w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-[#6C7A52] to-[#4F8F8B] rounded-3xl flex items-center justify-center shadow-2xl">
+                  <BookOpen className="text-white" size={48} />
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-[#D9A689] rounded-full flex items-center justify-center">
+                  <ChevronRight className="text-white" size={16} />
+                </div>
+              </div>
+              
+              <h1 className="text-4xl md:text-6xl font-light text-gray-900 mb-4">
+                INARA | <span className="text-[#6C7A52] font-medium">Blog</span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-[#D9A689] font-medium mb-8">
+                De la raíz al legado
+              </p>
+              
+              <div className="max-w-4xl text-center">
+                <p className="text-lg text-gray-700 leading-relaxed mb-8">
+                  Un espacio para transformar tu historia en propósito, cambio y legado.
+                </p>
+                
+                <p className="text-lg text-gray-600 mb-8">
+                  En algún punto de la vida y de la trayectoria profesional, llega el momento
+                  de pausar, mirar hacia adentro y preguntarte:
+                </p>
+                
+                <div className="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 max-w-3xl mx-auto">
+                  <div className="space-y-4 text-[#6C7A52] font-medium">
+                    <div className="flex items-start text-left">
+                      <span className="text-[#D9A689] mr-3 text-xl">→</span>
+                      <span>¿Qué de mi historia merece ser honrado?</span>
+                    </div>
+                    <div className="flex items-start text-left">
+                      <span className="text-[#D9A689] mr-3 text-xl">→</span>
+                      <span>¿Qué necesito soltar para seguir creciendo?</span>
+                    </div>
+                    <div className="flex items-start text-left">
+                      <span className="text-[#D9A689] mr-3 text-xl">→</span>
+                      <span>¿Cómo convierto lo vivido en mi mayor activo personal y profesional?</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
 
-        {/* Blog Posts */}
-        <div className="mb-12 sm:mb-16">
-          <h3 className="text-xl sm:text-2xl font-medium text-[#6C7A52] mb-6 sm:mb-8 text-center">
-            Últimas reflexiones del blog
-          </h3>
+      {/* Recent Articles */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {blogPosts.map((post, index) => (
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
+              Últimas <span className="text-[#6C7A52] font-medium">Reflexiones</span>
+            </h2>
+            <p className="text-lg text-gray-600">
+              Cada artículo es una invitación a profundizar en tu proceso de transformación
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogPosts.slice(1).map((post, index) => (
               <article
                 key={index}
-                className="bg-white p-4 sm:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group"
+                className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group cursor-pointer"
               >
-                <div className="flex items-center text-xs sm:text-sm text-gray-500 mb-3 sm:mb-4">
-                  <Calendar size={14} className="mr-2" />
-                  <span>{post.date}</span>
-                  <span className="mx-2">•</span>
-                  <span>{post.readTime}</span>
+                <div className="aspect-[16/10] bg-gradient-to-br from-[#6C7A52]/10 to-[#4F8F8B]/10 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#6C7A52]/20 to-[#4F8F8B]/20 flex items-center justify-center">
+                    <div className="text-center text-[#6C7A52]">
+                      <BookOpen size={32} className="mx-auto mb-2" />
+                      <span className="text-sm font-medium">Artículo #{index + 2}</span>
+                    </div>
+                  </div>
                 </div>
                 
-                <h4 className="text-base sm:text-lg font-medium text-gray-900 mb-2 sm:mb-3 group-hover:text-[#6C7A52] transition-colors">
-                  {post.title}
-                </h4>
-                
-                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
-                  {post.excerpt}
-                </p>
-                
-                <div className="flex items-center text-[#6C7A52] text-xs sm:text-sm font-medium group-hover:translate-x-1 transition-transform">
-                  <span>Leer más</span>
-                  <ArrowRight size={14} className="ml-1" />
+                <div className="p-6">
+                  <div className="flex items-center text-sm text-gray-500 mb-3">
+                    <Calendar size={14} className="mr-1" />
+                    <span>{post.date}</span>
+                    <span className="mx-2">•</span>
+                    <Clock size={14} className="mr-1" />
+                    <span>{post.readTime}</span>
+                  </div>
+                  
+                  <h3 className="text-xl font-medium text-gray-900 mb-3 group-hover:text-[#6C7A52] transition-colors line-clamp-2">
+                    {post.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 leading-relaxed mb-4 line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                  
+                  <div className="flex items-center text-[#6C7A52] font-medium group-hover:translate-x-1 transition-transform">
+                    <span>Leer más</span>
+                    <ArrowRight size={16} className="ml-1" />
+                  </div>
                 </div>
               </article>
             ))}
           </div>
           
-          <div className="text-center mt-6 sm:mt-8">
-            <a
-              href="#"
-              className="inline-flex items-center border-2 border-[#6C7A52] text-[#6C7A52] px-6 py-3 sm:px-8 sm:py-3 rounded-full font-medium hover:bg-[#6C7A52] hover:text-white transition-all duration-300 text-sm sm:text-base"
-            >
-              Ir al Blog
+          <div className="text-center mt-12">
+            <button className="inline-flex items-center border-2 border-[#6C7A52] text-[#6C7A52] px-8 py-4 rounded-full font-medium hover:bg-[#6C7A52] hover:text-white transition-all duration-300">
+              Ver todos los artículos
               <ArrowRight className="ml-2" size={18} />
-            </a>
+            </button>
           </div>
         </div>
+      </section>
 
-        {/* Newsletter */}
-        <div className="bg-gradient-to-r from-[#6C7A52] to-[#5a6644] p-6 sm:p-8 rounded-3xl text-white">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="flex flex-col sm:flex-row items-center justify-center mb-4 sm:mb-6">
-              <Mail className="mr-0 sm:mr-3 mb-2 sm:mb-0" size={28} />
-              <h3 className="text-xl sm:text-2xl font-medium">Suscríbete a INARA</h3>
-            </div>
-            
-            <p className="text-base sm:text-lg mb-6 sm:mb-8 text-white/90">
-              Recibe cada mes en tu correo notas, reflexiones y claves para tu evolución
-              personal y profesional.
-            </p>
-            
-            <form className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-md mx-auto">
-              <input
-                type="text"
-                placeholder="Tu nombre"
-                className="flex-1 px-4 py-2 sm:py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-white/50 text-sm sm:text-base"
-              />
-              <input
-                type="email"
-                placeholder="Tu email"
-                className="flex-1 px-4 py-2 sm:py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-white/50 text-sm sm:text-base"
-              />
-              <button
-                type="submit"
-                className="bg-[#4FEF8B] text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-medium hover:bg-[#3de076] transition-colors whitespace-nowrap text-xs sm:text-sm"
-              >
-                Quiero ser parte de INARA
-              </button>
-            </form>
-          </div>
-        </div>
-
-        {/* Closing Message */}
-        <div className="text-center mt-12 sm:mt-16">
-          <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg max-w-3xl mx-auto">
-            <p className="text-base sm:text-lg text-gray-700 leading-relaxed italic">
-              INARA es una invitación a recordar que solo cuando honramos de dónde
+      {/* Closing Message */}
+      <section className="py-16 bg-gradient-to-br from-[#6C7A52]/5 to-[#4F8F8B]/10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="bg-white p-8 md:p-12 rounded-3xl shadow-lg border border-gray-100">
+            <blockquote className="text-xl md:text-2xl text-gray-700 leading-relaxed italic mb-6">
+              "INARA es una invitación a recordar que solo cuando honramos de dónde
               venimos, podemos construir el camino hacia el legado que queremos
-              dejar.
-            </p>
+              dejar."
+            </blockquote>
             
-            <p className="text-lg sm:text-xl text-[#6C7A52] font-medium mt-3 sm:mt-4">
+            <div className="text-2xl md:text-3xl text-[#6C7A52] font-medium">
               → INARA | De la raíz al legado.
-            </p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </div>
   );
 };
