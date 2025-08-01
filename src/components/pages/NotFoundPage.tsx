@@ -12,7 +12,7 @@ const NotFoundPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#6C7A52]/5 via-white to-[#D9A689]/5 pt-20 pb-16">
+    <div className="min-h-screen bg-gradient-to-br from-[#6C7A52]/5 via-white to-[#D9A689]/5 pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Contenido Principal */}
