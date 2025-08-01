@@ -127,7 +127,8 @@ const AboutPage = () => {
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-6'
               }`}
-            >              <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
+            >
+              <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-xl text-gray-700 leading-relaxed">
                 <p>
                   Soy <span className="font-bold text-[#6C7A52] text-lg sm:text-xl">Nazly</span>, <span className="italic font-medium text-[#4F8F8B]">mentora en procesos de transformación personal, profesional y organizacional</span>. A lo largo de más de <span className="font-bold text-[#6C7A52] bg-[#6C7A52]/10 px-2 py-1 rounded-full">15 años</span> he forjado y liderado estrategias integrales en el sector privado, sector público y la cooperación internacional, acompañando a personas, equipos y organizaciones a alcanzar su <span className="font-semibold text-[#A7D3C1] italic">máximo nivel de impacto y alineación</span>.
                 </p>

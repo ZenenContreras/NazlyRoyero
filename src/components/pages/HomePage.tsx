@@ -166,7 +166,11 @@ const HomePage = () => {
             <div className="bg-gradient-to-br from-[#A7D3C1]/10 to-white p-4 sm:p-6 md:p-8 lg:p-12 rounded-2xl sm:rounded-3xl shadow-lg border border-[#A7D3C1]/20">
               <div className="text-center">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-[#6C7A52] rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6">
-                  <User className="text-white" size={16} />
+                  <img
+                    src="/images/metodoEstrella/metodoEstrella.png"
+                    alt="Método Estrella"
+                    className="w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 object-contain"
+                  />
                 </div>
                 
                 <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#6C7A52] mb-2 sm:mb-3 md:mb-4">
@@ -199,7 +203,11 @@ const HomePage = () => {
             <div className="bg-gradient-to-br from-[#4F8F8B]/10 to-white p-4 sm:p-6 md:p-8 lg:p-12 rounded-2xl sm:rounded-3xl shadow-lg border border-[#4F8F8B]/20">
               <div className="text-center">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-[#6C7A52] rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6">
-                  <Users className="text-white" size={16} />
+                  <img
+                    src="\images\metodoCasa\MétodoCASARecortado.png"
+                    alt="Método C.A.S.A."
+                    className="w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 object-contain"
+                  />
                 </div>
                 
                 <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#6C7A52] mb-2 sm:mb-3 md:mb-4">
