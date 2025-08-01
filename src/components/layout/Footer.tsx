@@ -1,20 +1,27 @@
 import React from 'react';
-import { Instagram, Linkedin, Youtube, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Instagram, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   const menuItems = [
-    'Inicio', 'Sobre mí', 'Método', 'Servicios', 'Blog', 'Podcast', 'Recursos', 'Contacto'
+    { name: 'Inicio', href: '/' },
+    { name: 'Sobre mí', href: '/sobre-mi' },
+    { name: 'Método Estrella', href: '/metodo-estrella' },
+    { name: 'Método C.A.S.A', href: '/metodo-casa' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Podcast', href: '/podcast' },
+    { name: 'Recursos', href: '/recursos' },
+    { name: 'Contacto', href: '/contacto' }
   ];
 
   const socialLinks = [
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Youtube, href: '#', label: 'YouTube' },
-    { icon: Mail, href: '#', label: 'Email' }
+    { icon: Instagram, href: 'https://www.instagram.com/nazlyroyero', label: 'Instagram' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/nazlyroyero', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:nazlytim@gmail.com', label: 'Email' }
   ];
 
   return (
-    <footer className="bg-[#6C7A52]/80 backdrop-blur-sm text-white py-12 sm:py-16">
+    <footer className="bg-[#6C7A52]/90 backdrop-blur-sm text-white py-12 sm:py-16">
       <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 mb-8 sm:mb-12">
@@ -32,7 +39,7 @@ const Footer = () => {
             </p>
             <p className="text-sm sm:text-base text-white/80 leading-relaxed">
               Acompañando procesos de transformación personal y profesional
-              a través del Método Estrella®.
+              a través del Método Estrella.
             </p>
           </div>
 
@@ -41,13 +48,13 @@ const Footer = () => {
             <h3 className="text-base sm:text-lg font-medium mb-4 sm:mb-6">Navegación</h3>
             <div className="grid grid-cols-2 gap-2 sm:gap-3">
               {menuItems.map((item, index) => (
-                <a
+                <Link
                   key={index}
-                  href={`#${item.toLowerCase().replace(' ', '-')}`}
-                  className="text-sm sm:text-base text-white/80 hover:text-[#4FEF8B] transition-colors duration-200"
+                  to={item.href}
+                  className="text-sm sm:text-base text-white/80 hover:text-[#f3bb9a] transition-colors duration-200"
                 >
-                  {item}
-                </a>
+                  {item.name}
+                </Link>
               ))}
             </div>
           </div>
@@ -64,7 +71,7 @@ const Footer = () => {
                     key={index}
                     href={social.href}
                     aria-label={social.label}
-                    className="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#4FEF8B] hover:text-gray-900 transition-all duration-300"
+                    className="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#f3bb9a] hover:text-white transition-all duration-300"
                   >
                     <IconComponent size={16} />
                   </a>
@@ -82,7 +89,7 @@ const Footer = () => {
                   placeholder="Tu email"
                   className="flex-1 px-3 py-2 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/60 focus:outline-none focus:bg-white/30 text-sm"
                 />
-                <button className="bg-[#4FEF8B] text-gray-900 px-3 py-2 rounded-lg hover:bg-[#3de076] transition-colors text-sm sm:text-xs">
+                <button className="bg-[#f3bb9a] text-white px-3 py-2 rounded-lg hover:bg-[#f3bb9a]/90 transition-colors text-sm sm:text-xs">
                   <Mail size={14} />
                 </button>
               </div>
