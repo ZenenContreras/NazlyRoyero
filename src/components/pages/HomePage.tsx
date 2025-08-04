@@ -242,7 +242,7 @@ const HomePage = () => {
       <section id="sobre-mi" className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-[#A7D3C1]/5 to-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center">            {/* Image */}
-            <div className="relative order-2 lg:order-1">
+            <div className="relative order-1 lg:order-1">
               <div className="aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg">
                 <img
                   src="/images/SobreMi-Inicio1.jpeg"
@@ -253,7 +253,7 @@ const HomePage = () => {
             </div>
 
             {/* Content */}
-            <div className="space-y-3 sm:space-y-4 md:space-y-6 order-1 lg:order-2">
+            <div className="space-y-3 sm:space-y-4 md:space-y-6 order-2 lg:order-2">
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-[#6C7A52] leading-relaxed">
                 Soy Nazly Royero, mentora en procesos de transformación personal, 
                 profesional y organizacional
@@ -415,7 +415,7 @@ const HomePage = () => {
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-[#A7D3C1]/5 to-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#6C7A52] mb-3 sm:mb-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#40413e] mb-3 sm:mb-4">
               Colaboraciones
             </h2>
             <div className="w-16 sm:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-[#C2A14D] to-[#D9A689] mx-auto"></div>
@@ -424,13 +424,11 @@ const HomePage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12 max-w-4xl mx-auto">
             {/* Creatitegia */}
             <div className="bg-white p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-lg text-center border border-gray-100 hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-full md:h-20  rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6 overflow-hidden">
                 <img
                   src="/images/inicio/logosColaboraciones/creatutegia.jpeg"
                   alt="Creatitegia Logo"
-                  className="w-full h-full object-contain"
+                  className="w-full h-20 object-contain mb-4"
                 />
-              </div>
               <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#6C7A52] mb-1 sm:mb-2">
                 Creatitegia
               </h3>
@@ -441,9 +439,11 @@ const HomePage = () => {
 
             {/* Fabio Canchila */}
             <div className="bg-white p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-lg text-center border border-gray-100 hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-[#4F8F8B]/20 to-[#A7D3C1]/20 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6">
-                <span className="text-lg sm:text-xl md:text-2xl font-bold text-[#6C7A52]">F</span>
-              </div>
+                <img
+                  src="/images/inicio/logosColaboraciones/fabiocanchila.png"
+                  alt="Fabio Canchila Logo"
+                  className="w-full h-20 object-contain mb-4"
+                />
               <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#6C7A52] mb-1 sm:mb-2">
                 Fabio Canchila
               </h3>
