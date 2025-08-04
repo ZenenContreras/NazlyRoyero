@@ -378,23 +378,26 @@ const HomePage = () => {
 
             {/* Blog Block */}
             <div className="bg-gradient-to-br from-[#A7D3C1]/10 to-white p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-lg text-center border border-[#A7D3C1]/20 sm:col-span-2 lg:col-span-1">
-              <div className="aspect-[1/1] bg-gradient-to-br from-[#A7D3C1]/20 to-[#6C7A52]/10 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 md:mb-6 shadow-md">
-                <div className="text-center text-gray-500">
-                  <Edit3 size={28} className="mx-auto mb-1 sm:mb-2 text-[#6C7A52]" />
-                  <p className="text-xs">Portada del Blog</p>
+              <div className="w-48 h-48 sm:w-64 sm:h-64 mx-auto bg-gradient-to-br from-[#A7D3C1] to-[#6C7A52] rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <div className="w-full h-full flex flex-col items-center justify-center text-white p-6 sm:p-8">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 mb-3 sm:mb-4 rounded-full bg-white/20 flex items-center justify-center transform animate-pulse">
+                    <Edit3 size={32} className="text-white" />
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold mb-2">INARA</h3>
+                  <p className="text-sm opacity-90">BLOG</p>
                 </div>
               </div>
 
-              <h3 className="text-sm sm:text-base md:text-lg lg:text-2xl font-bold text-[#6C7A52] mb-1 sm:mb-2">
-                INARA | <span className="tracking-wider text-xs sm:text-sm md:text-base">B l o g</span>
+              <h3 className="text-sm sm:text-base md:text-lg lg:text-2xl font-bold text-[#6C7A52] mb-1 sm:mb-2 pt-8">
+                INARA | <span className="tracking-wider text-xs sm:text-sm md:text-base">B L O G</span>
               </h3>
               
-              <p className="text-sm sm:text-base md:text-lg text-[#f3bb9a] font-medium mb-2 sm:mb-3 md:mb-4 italic">
+              <p className="text-sm sm:text-base md:text-xl text-[#A7D3C1] font-medium mb-2 sm:mb-3 md:mb-12 italic">
                 De la raíz al legado
               </p>
               
-              <p className="text-xs sm:text-sm md:text-base text-gray-700 mb-3 sm:mb-4 md:mb-6">
-                Reflexiones
+              <p className="text-xs sm:text-sm md:text-lg text-gray-700 mb-3 sm:mb-4 md:mb-6">
+                Reflexiones para crecer, conectar y transformar con propósito
               </p>
               
               <a
