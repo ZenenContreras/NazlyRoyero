@@ -3,39 +3,51 @@ import { BookOpen, Calendar, Clock, ArrowRight } from 'lucide-react';
 const BlogPage = () => {
   const blogPosts = [
     {
-      title: "Transformar tu historia en propósito: El primer paso hacia tu legado",
-      excerpt: "Descubre cómo honrar tu pasado puede convertirse en la base para construir el futuro que deseas.",
-      date: "15 Mar 2024",
+      title: "✨ Cómo redescubrir quién eres cuando todo parece cambiar",
+      excerpt: "💡  Porque en medio de la tormenta también hay una brújula que apunta a lo esencial: tú.",
+      date: "7 Agosto 2025",
       readTime: "5 min"
     },
     {
-      title: "Los 3 pilares del autoconocimiento que cambiarán tu perspectiva",
-      excerpt: "Una guía práctica para conectar con tu esencia y tomar decisiones alineadas con tus valores.",
-      date: "8 Mar 2024",
+      title: "🌱 De la raíz a tu propósito: ejercicios para encontrar tu norte personal",
+      excerpt: "✨ Porque a veces perderse es el primer paso para encontrarse.",
+      date: "7 Agosto 2025",
       readTime: "7 min"
     },
     {
-      title: "Reinvención consciente: Cómo navegar las transiciones con propósito",
-      excerpt: "Estrategias para convertir la incertidumbre en oportunidad y evolución personal.",
-      date: "1 Mar 2024",
+      title: "🤝 Equipos que brillan: la conexión como motor de resultados",
+      excerpt: "✨ Porque cuando las personas se conectan de verdad, los resultados dejan de ser solo números y se convierten en logros que inspiran.",
+      date: "7 Agosto 2025",
       readTime: "6 min"
     },
     {
-      title: "El arte de crear impacto: De la intención a la acción",
-      excerpt: "Cómo alinear tus acciones diarias con tu visión de legado y propósito de vida.",
-      date: "22 Feb 2024",
+      title: "🤝Aprender juntos: el secreto de los equipos que trascienden",
+      excerpt: "✨ Porque ningún gran resultado se logra en solitario.",
+      date: "7 Agosto 2025",
       readTime: "8 min"
     },
     {
-      title: "Bienestar integral: Más allá del equilibrio trabajo-vida",
-      excerpt: "Una perspectiva holística sobre el bienestar que integra lo físico, emocional, mental y espiritual.",
-      date: "15 Feb 2024",
+      title: "🔄 Transforma la incertidumbre en oportunidad: claves para reinventarte",
+      excerpt: "✨ Porque no siempre puedes elegir lo que cambia, pero sí cómo lo conviertes en tu siguiente gran paso.",
+      date: "7 Agosto 2025",
       readTime: "6 min"
     },
     {
-      title: "Liderazgo auténtico: Liderar desde la vulnerabilidad y la fuerza",
-      excerpt: "Cómo desarrollar un liderazgo consciente que inspire transformación en otros.",
-      date: "8 Feb 2024",
+      title: "🌟 Liderarte a ti para liderar a otros",
+      excerpt: "✨ Porque nadie puede guiar a otros si no ha aprendido primero a guiarse a sí mismo.",
+      date: "7 Agosto 2025",
+      readTime: "9 min"
+    },
+    {
+      title: "✨ Dejar huella: cómo construir un legado desde hoy",
+      excerpt: "🌱 Porque tu legado no es lo que dejas al final, sino lo que empiezas a sembrar hoy.",
+      date: "7 Agosto 2025",
+      readTime: "9 min"
+    },
+    {
+      title: "💡 Claves para activar la creatividad de tu equipo",
+      excerpt: "✨ Porque en un mundo que se reinventa cada día, las organizaciones que crean se vuelven imparables.",
+      date: "7 Agosto 2025",
       readTime: "9 min"
     }
   ];
