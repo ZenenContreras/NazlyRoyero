@@ -1,17 +1,17 @@
-import { ArrowRight, Star, User, Users, BookOpen, Headphones, Edit3 } from 'lucide-react';
+import { ArrowRight, Star, User, Users, BookOpen, Edit3 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const HomePage = () => {
   // Carousel state for background images
   const carouselImages = [
-    'Carrusel Inicio 1.jpeg',
-    'Carrusel inicio 2.jpeg',
-    'Carrusel Inicio 4.jpeg',
-    'Carrusel - Inicio 6.jpeg',
-    'Carrusel Inicio 7.jpeg',
-    'Carrusel Inicio 8.jpeg',
-    'Carrusel _Inicio 12.jpeg',
-    'Carrusel inicio - 13.jpeg'
+    '/images/inicio/carrusel/Carrusel Inicio 1.jpeg',
+    '/images/inicio/carrusel/Carrusel inicio 2.jpeg',
+    '/images/inicio/carrusel/Carrusel Inicio 4.jpeg',
+    '/images/inicio/carrusel/Carrusel - Inicio 6.jpeg',
+    '/images/inicio/carrusel/Carrusel Inicio 7.jpeg',
+    '/images/inicio/carrusel/Carrusel Inicio 8.jpeg',
+    '/images/inicio/carrusel/Carrusel _Inicio 12.jpeg',
+    '/images/inicio/carrusel/Carrusel inicio - 13.jpeg'
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -40,7 +40,7 @@ const HomePage = () => {
               }`}
             >
               <img
-                src={`/images/${image}`}
+                src={image}
                 alt={`Background carousel image ${index + 1}`}
                 className="w-full h-full object-cover"
               />
@@ -64,7 +64,7 @@ const HomePage = () => {
                 }`}
               >
                 <img
-                  src={`/images/${image}`}
+                  src={image}
                   alt={`Background carousel image ${index + 1}`}
                   className="h-full w-auto object-contain max-w-none"
                 />
@@ -72,7 +72,7 @@ const HomePage = () => {
             ))}
             
             {/* Multiple layer left gradient fade - dramatic blending with text area */}
-            <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-white via-white/90 via-white/70 to-white/30 pointer-events-none z-10"></div>
+            <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-white to-white/30 pointer-events-none z-10"></div>
             <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-white via-white/95 to-white/60 pointer-events-none z-11"></div>
             <div className="absolute left-0 top-0 w-16 h-full bg-gradient-to-r from-white via-white/98 to-transparent pointer-events-none z-12"></div>
               {/* Enhanced right gradient fade - stronger edge softening */}
@@ -421,8 +421,12 @@ const HomePage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12 max-w-4xl mx-auto">
             {/* Creatitegia */}
             <div className="bg-white p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-lg text-center border border-gray-100 hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-[#C2A14D]/20 to-[#D9A689]/20 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6">
-                <span className="text-lg sm:text-xl md:text-2xl font-bold text-[#6C7A52]">C</span>
+              <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-full md:h-20  rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6 overflow-hidden">
+                <img
+                  src="/images/inicio/logosColaboraciones/creatutegia.jpeg"
+                  alt="Creatitegia Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#6C7A52] mb-1 sm:mb-2">
                 Creatitegia
