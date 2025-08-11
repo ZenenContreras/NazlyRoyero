@@ -143,7 +143,7 @@ const ContactPage = () => {
                       </div>
                       <div className="bg-[#6C7A52]/10 p-3 rounded-lg">
                         <p className="text-xs text-gray-600 text-center">
-                          <strong>Disponible:</strong> Agosto, Septiembre y Octubre 2025
+                          <strong>Disponible:</strong> Agosto, Septiembre y Octubre
                         </p>
                       </div>
                       <button 
