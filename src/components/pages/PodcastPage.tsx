@@ -5,7 +5,7 @@ const PodcastPage = () => {
     {
       id: 1,
       title: "Efecto chispa: el instante en que todo empieza a moverse",
-      subtitle: "🌟",
+      subtitle: "✨",
       description: "Explora ese momento decisivo cuando algo dentro de ti hace click y empiezas a moverte hacia tu transformación.",
       duration: "42 min",
       date: "7 Agosto 2025",
@@ -13,21 +13,84 @@ const PodcastPage = () => {
     },
     {
       id: 2,
-      title: "El vértigo de moverte: cuando quedarse quieto ya no es opción",
-      subtitle: "🌪️",
-      description: "Esa sensación de vértigo que aparece cuando decidimos cambiar, y cómo navegarla con confianza y propósito.",
+      title: "Despertar consciente: reconociendo las señales de cambio",
+      subtitle: "👁️",
+      description: "Aprende a identificar y escuchar esas señales internas que te indican que es momento de evolucionar.",
       duration: "38 min",
-      date: "Proximamente ",
+      date: "Próximamente",
       image: "/images/podcast/episodio2.png"
     },
     {
       id: 3,
-      title: "Pasaporte a tu próxima versión",
-      subtitle: "🧳",
-      description: "Los elementos esenciales que necesitas para hacer la transición hacia quien estás destinado a ser.",
+      title: "El coraje de comenzar: dando el primer paso",
+      subtitle: "�",
+      description: "Explora qué se necesita para superar el miedo y dar ese primer paso hacia tu transformación.",
       duration: "45 min",
-      date: "proximamente",
+      date: "Próximamente",
       image: "/images/podcast/episodio3.png"
+    },
+    {
+      id: 4,
+      title: "Montañas rusa y mapas sin trazar",
+      subtitle: "🌊",
+      description: "Explora tus rutas desconocidas.",
+      duration: "39 min",
+      date: "Próximamente",
+      image: "/images/podcast/episodio4.png"
+    },
+    {
+      id: 5,
+      title: "Puentes invisibles",
+      subtitle: "�",
+      description: "Lo que conectas cuando te atreves a cambiar de ruta.",
+      duration: "41 min",
+      date: "Próximamente",
+      image: "/images/podcast/episodio5.png"
+    },
+    {
+      id: 6,
+      title: "Semáforos en verde",
+      subtitle: "⏸️",
+      description: "Señales ocultas de que es hora avanzar",
+      duration: "37 min",
+      date: "Próximamente",
+      image: "/images/podcast/episodio6.png"
+    },
+    {
+      id: 7,
+      title: "Mareas internas",
+      subtitle: "📊",
+      description: "La ciencia secreta de moverte por dentro.",
+      duration: "43 min",
+      date: "Próximamente",
+      image: "/images/podcast/episodio7.png"
+    },
+    {
+      id: 8,
+      title: "Maletas ligeras, ideas enormes",
+      subtitle: "🌊",
+      description: "Viajar sin peso, crear sin límites.",
+      duration: "40 min",
+      date: "Próximamente",
+      image: "/images/podcast/episodio8.png"
+    },
+    {
+      id: 9,
+      title: "Reset en marcha",
+      subtitle: "🤝",
+      description: " Cómo reinventarte sin presionar pausa.",
+      duration: "44 min",
+      date: "Próximamente",
+      image: "/images/podcast/episodio9.png"
+    },
+    {
+      id: 10,
+      title: "Galaxias personales",
+      subtitle: "�",
+      description: "Cuando moverte abre universos que no imaginabas.",
+      duration: "46 min",
+      date: "Próximamente",
+      image: "/images/podcast/episodio10.png"
     }
   ];
 
