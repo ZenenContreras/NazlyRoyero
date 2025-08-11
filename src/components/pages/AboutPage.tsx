@@ -278,7 +278,7 @@ const AboutPage = () => {
             <Star className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 text-[#A7D3C1] opacity-70" size={28} />
             
             <blockquote className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold italic leading-relaxed mb-6 text-[#6C7A52]">
-              "No se trata solo de <span className="text-[#4F8F8B] font-extrabold">cambiar</span>. Se trata de crear una vida <span className="bg-gradient-to-r from-[#6C7A52] to-[#A7D3C1] bg-clip-text text-transparent font-extrabold">alineada</span> con lo que eres, lo que deseas y el <span className="text-[#4FEF8B] font-extrabold">legado</span> que quieres dejar."
+              No se trata solo de <span className="text-[#4F8F8B] font-extrabold">cambiar</span>. Se trata de crear una vida <span className="bg-gradient-to-r from-[#6C7A52] to-[#A7D3C1] bg-clip-text text-transparent font-extrabold">alineada</span> con lo que eres, lo que deseas y el <span className="text-[#4FEF8B] font-extrabold">legado</span> que quieres dejar.
             </blockquote>
             
             <div className="w-20 sm:w-32 h-1.5 bg-gradient-to-r from-[#4FEF8B] via-[#6C7A52] to-[#A7D3C1] mx-auto rounded-full"></div>

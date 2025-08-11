@@ -118,7 +118,8 @@ const MethodCasaPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-20">      {/* Hero Section */}
+    <div className="min-h-screen bg-white pt-20">
+      {/* Hero Section */}
       <section 
         ref={heroAnimation.ref}
         className={`py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-[#A7D3C1]/10 to-white transition-all duration-700 ease-out ${
@@ -126,7 +127,8 @@ const MethodCasaPage = () => {
             ? 'opacity-100 translate-y-0' 
             : 'opacity-0 translate-y-4'
         }`}
-      >        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6">
             <span className="bg-gradient-to-r from-[#6C7A52] via-[#4F8F8B] to-[#A7D3C1] bg-clip-text text-transparent">
               MÉTODO C.A.S.A.
@@ -137,7 +139,9 @@ const MethodCasaPage = () => {
             <span className="text-gray-700">donde cada equipo encuentra su</span>{" "}
             <span className="text-[#4F8F8B] font-bold italic">propósito, potencial y evolución</span>
           </h2>
-        </div>{/* Logo Section */}
+        </div>
+
+        {/* Logo Section */}
         <section 
           ref={logoAnimation.ref}
           className={`py-8 sm:py-12 bg-white transition-all duration-700 ease-out delay-100 ${
@@ -146,21 +150,22 @@ const MethodCasaPage = () => {
               : 'opacity-0 translate-y-4'
           }`}
         >
-            <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="bg-gradient-to-br from-[#A7D3C1]/10 to-[#6C7A52]/5 p-6 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl shadow-lg border border-gray-100">
-                <img
-                src="\images\metodoCasa\MétodoCASA.png"
+              <img
+                src="/images/metodoCasa/MetodoCASA.png"
                 alt="Método C.A.S.A. - Conexión, Aprendizaje, Sinergia y Adaptación"
-                className="w-full max-w-xs sm:max-w-sm  mx-auto h-auto"
-                />
-                <p className="text-sm sm:text-base md:text-lg text-[#6C7A52] font-medium mt-4 sm:mt-6 italic">
+                className="w-full max-w-xs sm:max-w-sm mx-auto h-auto"
+              />
+              <p className="text-sm sm:text-base md:text-lg text-[#6C7A52] font-medium mt-4 sm:mt-6 italic">
                 Un método integral que conecta personas, potencia aprendizajes, genera sinergias y facilita la adaptación
-                </p>
+              </p>
             </div>
-            </div>
-        </section> 
+          </div>
+        </section>
+      </section>
 
-      </section>      {/* Introduction */}
+      {/* Introduction */}
       <section 
         ref={introAnimation.ref}
         className={`py-6 bg-white transition-all duration-700 ease-out delay-150 ${
@@ -174,7 +179,9 @@ const MethodCasaPage = () => {
             En un mundo en constante cambio, las personas y organizaciones necesitan algo más que procesos: necesitan un lugar seguro para crecer. El método C.A.S.A. crea esa atmósfera donde las conexiones son profundas, el aprendizaje es continuo, la sinergia potencia talentos y la adaptación se convierte en motor de evolución.
           </p>
         </div>
-      </section>{/* Four Pillars */}
+      </section>
+
+      {/* Four Pillars */}
       <section 
         ref={pillarsAnimation.ref}
         className={`py-8 sm:py-12 md:py-16 bg-gradient-to-br from-white to-[#A7D3C1]/5 transition-all duration-700 ease-out delay-200 ${
@@ -188,7 +195,9 @@ const MethodCasaPage = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#6C7A52] mb-4">
               Los Cuatro Pilares de C.A.S.A.
             </h2>
-          </div>          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
             {pillars.map((pillar, index) => {
               const IconComponent = pillar.icon;
               return (
@@ -224,7 +233,9 @@ const MethodCasaPage = () => {
             })}
           </div>
         </div>
-      </section>     {/* Closing Statement */}
+      </section>
+
+      {/* Closing Statement */}
       <section 
         ref={closingAnimation.ref}
         className={`py-6 sm:py-8 md:py-12 lg:py-16 bg-[#6C7A52] text-white transition-all duration-700 ease-out delay-250 ${
@@ -241,7 +252,9 @@ const MethodCasaPage = () => {
             En esa C.A.S.A., cada aporte se convierte en valor, cada idea se transforma en acción y cada desafío impulsa una evolución que trasciende al equipo y transforma a toda la organización.
           </p>
         </div>
-      </section>      {/* Main CTA */}
+      </section>
+
+      {/* Main CTA */}
       <section 
         ref={ctaAnimation.ref}
         className={`py-6 sm:py-8 md:py-12 lg:py-16 bg-gradient-to-br from-[#A7D3C1]/10 to-white transition-all duration-700 ease-out delay-300 ${
@@ -258,7 +271,7 @@ const MethodCasaPage = () => {
             Descubre cómo aplicar el método C.A.S.A. y agenda una sesión conmigo.
           </p>
           <a
-            href="#contacto"
+            href="/contacto"
             className="inline-flex items-center bg-[#6C7A52] text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full text-sm sm:text-base md:text-lg font-medium hover:bg-[#5a6644] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 group"
           >
             <Calendar className="mr-1 sm:mr-2" size={16} />
@@ -266,7 +279,9 @@ const MethodCasaPage = () => {
             <ArrowRight className="ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" size={16} />
           </a>
         </div>
-      </section>      {/* Services Section */}
+      </section>
+
+      {/* Services Section */}
       <section 
         ref={servicesAnimation.ref}
         className={`py-6 sm:py-8 md:py-12 lg:py-16 bg-white transition-all duration-700 ease-out delay-350 ${
@@ -280,7 +295,9 @@ const MethodCasaPage = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#6C7A52] mb-4">
               Servicios que potencian la evolución colectiva
             </h2>
-          </div>          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
             {services.map((service, index) => (
               <div
                 key={index}
@@ -337,7 +354,7 @@ const MethodCasaPage = () => {
 
                 <div className="mt-4 sm:mt-6 md:mt-8">
                   <a
-                    href="#contacto"
+                    href="/contacto"
                     className="inline-flex items-center bg-[#4F8F8B] text-white px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-medium hover:bg-[#6C7A52] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 group"
                   >
                     <Calendar className="mr-1 sm:mr-2" size={14} />

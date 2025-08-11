@@ -392,7 +392,7 @@ const HomePage = () => {
                 INARA | <span className="tracking-wider text-xs sm:text-sm md:text-base">B L O G</span>
               </h3>
               
-              <p className="text-sm sm:text-base md:text-xl text-[#A7D3C1] font-medium mb-2 sm:mb-3 md:mb-12 italic">
+              <p className="text-sm sm:text-base md:text-xl text-[#f3bb9a] font-medium mb-2 sm:mb-3 md:mb-12 italic">
                 De la raíz al legado
               </p>
               
@@ -427,7 +427,7 @@ const HomePage = () => {
                 <img
                   src="/images/inicio/logosColaboraciones/creatutegia.jpeg"
                   alt="Creatitegia Logo"
-                  className="w-full h-20 object-contain mb-4"
+                  className="w-full h-20 object-cover mb-4 rounded-2xl"
                 />
               <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#6C7A52] mb-1 sm:mb-2">
                 Creatitegia

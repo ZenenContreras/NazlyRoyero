@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Send, MessageCircle, ArrowRight, User, Mail, MessageSquare } from 'lucide-react';
+import { Send, MessageCircle, ArrowRight, User, Mail, MessageSquare, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '../../config/emailjs';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +11,10 @@ const ContactPage = () => {
     message: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitMessage, setSubmitMessage] = useState('');
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
@@ -16,22 +22,58 @@ const ContactPage = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setSubmitMessage('');
+
+    try {
+      // Enviar email con EmailJS
+      const result = await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          service: formData.service,
+          message: formData.message,
+          to_email: EMAILJS_CONFIG.TO_EMAIL,
+        },
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+
+      console.log('Email enviado:', result);
+      
+      setSubmitStatus('success');
+      setSubmitMessage('¡Mensaje enviado exitosamente! Te contactaré pronto.');
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        service: '',
+        message: ''
+      });
+
+    } catch (error) {
+      console.error('Error enviando email:', error);
+      setSubmitStatus('error');
+      setSubmitMessage('Hubo un problema al enviar tu mensaje. Por favor, intenta de nuevo.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const serviceOptions = [
     {
       value: "mentoria-personal",
-      label: "Mentoría Personal",
-      description: "Coaching 1:1 y procesos personalizados"
+      label: "Mentoría Personal"
     },
     {
       value: "mentoria-equipos",
-      label: "Mentoría para Equipos y Organizaciones", 
-      description: "Liderazgo consciente y transformación organizacional"
+      label: "Mentoría para Equipos y Organizaciones"
     }
   ];
 
@@ -47,7 +89,7 @@ const ContactPage = () => {
             </span>
           </h1>
           <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6 md:mb-8 max-w-4xl mx-auto leading-relaxed animate-in slide-in-from-bottom-4 duration-700 delay-100">
-            <span className="text-[#6C7A52] font-semibold">💬 Tu transformación comienza</span>{" "}
+            <span className="text-[#6C7A52] font-semibold">Tu transformación comienza</span>{" "}
             <span className="text-gray-700">con una</span>{" "}
             <span className="text-[#4F8F8B] font-bold italic">conversación</span>
           </h2>
@@ -61,15 +103,95 @@ const ContactPage = () => {
           {/* Mobile: Stacked Layout, Desktop: 2 Columns */}
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
             
-            {/* Contact Form - Shows first on mobile, left on desktop */}
-            <div className="order-2 lg:order-1 animate-in slide-in-from-left-6 duration-700 delay-300">
+            {/* Contact Info & Cover - Shows first on mobile, left on desktop */}
+            <div className="order-1 animate-in slide-in-from-left-6 duration-700 delay-400">
+              <div className="bg-gradient-to-br from-[#4F8F8B]/10 to-[#6C7A52]/5 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center lg:sticky lg:top-24">
+                
+                {/* Contact Photo */}
+                <div className="relative mb-4 sm:mb-6">
+                  <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 mx-auto rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img
+                      src="/images/conversemos/conversemos-foto.jpeg"
+                      alt="Nazly Royero - Conversemos"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+
+                {/* Contact Info */}
+                <div className="mt-6 sm:mt-8">
+                  <p className="text-[#4F8F8B] font-medium mb-3 sm:mb-4 text-base sm:text-lg">
+                    Estoy aquí para escucharte
+                  </p>
+                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed max-w-sm mx-auto mb-4 sm:mb-6">
+                    Puedes escribirme, agendar una sesión de claridad o solicitar información sobre programas, mentorías o talleres.
+                  </p>
+                </div>
+
+                {/* Quick Actions */}
+                <div className="space-y-3">
+                  <div className="bg-white border-2 border-[#4F8F8B] rounded-xl p-4 sm:p-6">
+                    <h3 className="text-[#4F8F8B] font-semibold mb-4 text-center">Reserva tu sesión de claridad</h3>
+                    <div className="space-y-3 text-sm">
+                      <div className="bg-[#4F8F8B]/10 p-3 rounded-lg">
+                        <h4 className="font-medium text-[#6C7A52] mb-2">Horarios Disponibles:</h4>
+                        <div className="space-y-1 text-xs text-gray-700">
+                          <p><strong>Martes:</strong> 6:30 - 7:30 AM | 5:00 - 6:00 PM</p>
+                          <p><strong>Viernes:</strong> 4:00 - 5:00 PM</p>
+                          <p><strong>Sábado:</strong> 9:00 - 10:00 AM | 11:00 AM - 12:00 PM</p>
+                        </div>
+                      </div>
+                      <div className="bg-[#6C7A52]/10 p-3 rounded-lg">
+                        <p className="text-xs text-gray-600 text-center">
+                          <strong>Disponible:</strong> Agosto, Septiembre y Octubre 2024
+                        </p>
+                      </div>
+                      <button 
+                        onClick={() => {
+                          // Mobile: scroll to form
+                          if (window.innerWidth < 1024) {
+                            const formElement = document.getElementById('contact-form');
+                            if (formElement) {
+                              formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                          }
+                        }}
+                        className="w-full bg-[#4F8F8B] text-white px-4 py-3 rounded-xl font-medium hover:bg-[#4F8F8B]/90 transition-all duration-300 transform hover:scale-105"
+                      >
+                        Agendar Sesión
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Form - Shows second on mobile, right on desktop */}
+            <div className="order-2 animate-in slide-in-from-right-6 duration-700 delay-300">
               
               {/* Contact Form */}
-              <div className="bg-white rounded-xl sm:rounded-2xl border border-gray-200 shadow-lg p-6 sm:p-8">
+              <div id="contact-form" className="bg-white rounded-xl sm:rounded-2xl border border-gray-200 shadow-lg p-6 sm:p-8">
+                <div id="formulario"></div>
                 <h2 className="text-lg sm:text-xl font-medium text-gray-900 mb-4 sm:mb-6">
                   Cuéntame sobre tu momento actual
                 </h2>
                 
+                {/* Status Messages */}
+                {submitStatus !== 'idle' && (
+                  <div className={`p-4 rounded-xl flex items-center space-x-3 ${
+                    submitStatus === 'success' 
+                      ? 'bg-green-50 text-green-800 border border-green-200 mb-4' 
+                      : 'bg-red-50 text-red-800 border border-red-200 mb-4'
+                  }`}>
+                    {submitStatus === 'success' ? (
+                      <CheckCircle className="w-5 h-5 text-green-600" />
+                    ) : (
+                      <AlertCircle className="w-5 h-5 text-red-600" />
+                    )}
+                    <p className="text-sm font-medium ">{submitMessage}</p>
+                  </div>
+                )}
+
                 <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                   <div className="animate-in fade-in slide-in-from-bottom-2 delay-400">
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -126,13 +248,6 @@ const ContactPage = () => {
                       ))}
                     </select>
                     
-                    {formData.service && (
-                      <div className="mt-2 p-3 bg-[#4F8F8B]/10 rounded-lg">
-                        <p className="text-xs sm:text-sm text-[#4F8F8B] font-medium">
-                          {serviceOptions.find(opt => opt.value === formData.service)?.description}
-                        </p>
-                      </div>
-                    )}
                   </div>
 
                   <div className="animate-in fade-in slide-in-from-bottom-2 delay-700">
@@ -154,11 +269,25 @@ const ContactPage = () => {
                   <div className="animate-in fade-in slide-in-from-bottom-2 delay-800">
                     <button
                       type="submit"
-                      className="w-full bg-gradient-to-r from-[#6C7A52] to-[#4F8F8B] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl text-base sm:text-lg font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center group"
+                      disabled={isSubmitting}
+                      className={`w-full bg-gradient-to-r from-[#6C7A52] to-[#4F8F8B] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl text-base sm:text-lg font-medium transition-all duration-300 flex items-center justify-center group ${
+                        isSubmitting 
+                          ? 'opacity-70 cursor-not-allowed' 
+                          : 'hover:shadow-lg transform hover:scale-105'
+                      }`}
                     >
-                      <Send className="mr-2" size={18} />
-                      Enviar mensaje
-                      <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="mr-2 animate-spin" size={18} />
+                          Enviando...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="mr-2" size={18} />
+                          Enviar mensaje
+                          <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
+                        </>
+                      )}
                     </button>
                   </div>
                 </form>
@@ -195,71 +324,6 @@ const ContactPage = () => {
               </div>
             </div>
 
-            {/* Contact Info & Cover - Shows first on mobile, right on desktop */}
-            <div className="order-1 lg:order-2 animate-in slide-in-from-right-6 duration-700 delay-400">
-              <div className="bg-gradient-to-br from-[#4F8F8B]/10 to-[#6C7A52]/5 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center lg:sticky lg:top-24">
-                
-                {/* Contact Cover */}
-                <div className="relative mb-4 sm:mb-6">
-                  <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 mx-auto bg-gradient-to-br from-[#6C7A52] to-[#4F8F8B] rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <div className="w-full h-full flex flex-col items-center justify-center text-white p-6 sm:p-8">
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 mb-3 sm:mb-4 rounded-full bg-white/20 flex items-center justify-center transform animate-pulse">
-                        <MessageCircle size={32} />
-                      </div>
-                      <h3 className="text-lg sm:text-xl font-bold mb-2">CONVERSEMOS</h3>
-                      <p className="text-sm opacity-90">ESTOY AQUÍ</p>
-                      <p className="text-xs opacity-75 mt-2">Para escucharte</p>
-                    </div>
-                  </div>
-                  
-                  {/* Floating Action Button */}
-                  <div className="absolute -bottom-3 sm:-bottom-4 left-1/2 transform -translate-x-1/2">
-                    <button className="w-12 h-12 sm:w-16 sm:h-16 bg-white shadow-2xl rounded-full flex items-center justify-center text-[#4F8F8B] hover:scale-110 transition-all duration-300 border-4 border-white group">
-                      <Send className="transform group-hover:scale-110 transition-transform duration-200" size={20} />
-                    </button>
-                  </div>
-                </div>
-
-                {/* Contact Info */}
-                <div className="mt-6 sm:mt-8">
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-gray-900 mb-2 sm:mb-3">
-                    Tu transformación comienza aquí
-                  </h2>
-                  <p className="text-[#4F8F8B] font-medium mb-3 sm:mb-4 text-sm sm:text-base">
-                    Estoy aquí para escucharte.
-                  </p>
-                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed max-w-sm mx-auto mb-4 sm:mb-6">
-                    Puedes escribirme, agendar una sesión de claridad o solicitar 
-                    información sobre programas, mentorías o talleres.
-                  </p>
-                </div>
-
-                {/* Quote Section */}
-                <div className="bg-gradient-to-r from-[#6C7A52] to-[#4F8F8B] p-4 sm:p-6 rounded-2xl text-white mb-4 sm:mb-6">
-                  <p className="text-sm sm:text-base font-medium leading-relaxed italic">
-                    "Tu transformación comienza con una conversación. Estoy aquí para escucharte."
-                  </p>
-                </div>
-
-                {/* Quick Actions */}
-                <div className="space-y-3">
-                  <button className="w-full bg-white border-2 border-[#4F8F8B] text-[#4F8F8B] px-4 py-3 sm:py-4 rounded-xl font-medium hover:bg-[#4F8F8B] hover:text-white transition-all duration-300 text-sm sm:text-base transform hover:scale-105 group">
-                    <span className="flex items-center justify-center">
-                      <MessageCircle className="mr-2" size={16} />
-                      Reserva tu sesión de claridad
-                      <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-200" size={16} />
-                    </span>
-                  </button>
-                  
-                  <button className="w-full bg-[#4F8F8B]/10 text-[#4F8F8B] px-4 py-3 rounded-xl font-medium hover:bg-[#4F8F8B]/20 transition-all duration-300 text-sm">
-                    <span className="flex items-center justify-center">
-                      <Mail className="mr-2" size={16} />
-                      Información sobre programas
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

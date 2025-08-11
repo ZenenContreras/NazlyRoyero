@@ -17,6 +17,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: Instagram, href: 'https://www.instagram.com/nazlyroyero', label: 'Instagram' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/nazlyroyero', label: 'LinkedIn' },
+    { icon: 'tiktok', href: 'https://www.tiktok.com/@nazlyroyero', label: 'TikTok' },
     { icon: Mail, href: 'mailto:nazlytim@gmail.com', label: 'Email' }
   ];
 
@@ -39,7 +40,7 @@ const Footer = () => {
             </p>
             <p className="text-sm sm:text-base text-white/80 leading-relaxed">
               Acompañando procesos de transformación personal y profesional
-              a través del Método Estrella.
+              a través del Método Estrella y Método C.A.S.A.
             </p>
           </div>
 
@@ -65,6 +66,22 @@ const Footer = () => {
             
             <div className="flex space-x-3 sm:space-x-4 mb-6 sm:mb-8">
               {socialLinks.map((social, index) => {
+                if (social.icon === 'tiktok') {
+                  return (
+                    <a
+                      key={index}
+                      href={social.href}
+                      aria-label={social.label}
+                      className="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#f3bb9a] hover:text-white transition-all duration-300"
+                    >
+                      <img 
+                        src="/images/iconos/tik-tok.png" 
+                        alt="TikTok" 
+                        className="w-4 h-4 sm:w-5 sm:h-5 filter brightness-0 invert"
+                      />
+                    </a>
+                  );
+                }
                 const IconComponent = social.icon;
                 return (
                   <a
