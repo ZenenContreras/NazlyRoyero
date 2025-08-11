@@ -427,7 +427,7 @@ const HomePage = () => {
                 <img
                   src="/images/inicio/logosColaboraciones/creatutegia.jpeg"
                   alt="Creatitegia Logo"
-                  className="w-full h-20 object-cover mb-4 rounded-2xl"
+                  className="w-full object-cover mb-4 rounded-2xl"
                 />
               <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#6C7A52] mb-1 sm:mb-2">
                 Creatitegia
