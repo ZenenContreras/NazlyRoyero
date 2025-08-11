@@ -1,7 +1,18 @@
-import { ArrowRight, Heart, BookOpen, Users, Leaf, Calendar, Sparkles, Home } from 'lucide-react';
+import { ArrowRight, Heart, BookOpen, Users, Leaf, Calendar, Sparkles, Home, ChevronDown, ChevronUp } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 const MethodCasaPage = () => {
+  // Estado para controlar secciones desplegables
+  const [expandedSections, setExpandedSections] = useState<{[key: string]: boolean}>({});
+  
+  const toggleSection = (serviceIndex: number, section: string) => {
+    const key = `${serviceIndex}-${section}`;
+    setExpandedSections(prev => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
+  };
+
   // Hook personalizado para animaciones de scroll
   const useScrollAnimation = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -74,46 +85,66 @@ const MethodCasaPage = () => {
     {
       title: "Programas de Transformación de Equipos",
       claim: "Conexiones que construyen equipos imparables.",
-      purpose: "Fortalecer la confianza, mejorar la comunicación y alinear al equipo hacia objetivos medibles, claros y alcanzables.",
+      description: "Fortalecer la confianza, mejorar la comunicación y alinear al equipo hacia objetivos medibles, claros y alcanzables.",
+      achievements: [
+        "Equipos cohesionados, con herramientas prácticas para evaluar su impacto, planificar mejor y generar resultados sostenibles.",
+        "Confianza fortalecida y comunicación mejorada entre todos los miembros del equipo.",
+        "Objetivos claros, medibles y alcanzables alineados con la visión organizacional."
+      ],
       how: [
         "Talleres vivenciales con metodologías de planificación y monitoreo, para que los equipos no solo se integren, sino que aprendan a medir su propio avance.",
         "Ejercicios de gestión del conocimiento: cada sesión genera aprendizajes documentados y buenas prácticas que quedan para el equipo."
       ],
-      result: "Equipos cohesionados, con herramientas prácticas para evaluar su impacto, planificar mejor y generar resultados sostenibles."
+      cta: "¿Listo para transformar tu equipo?"
     },
     {
       title: "Mentoring Ejecutivo y de Liderazgo",
       claim: "Liderar es aprender a evolucionar.",
-      purpose: "Acompañar a líderes para que gestionen con visión y métodos, integrando cambio, conocimiento y comunicación estratégica",
+      description: "Acompañar a líderes para que gestionen con visión y métodos, integrando cambio, conocimiento y comunicación estratégica.",
+      achievements: [
+        "Líderes con visión estratégica y habilidades para movilizar equipos, sostener procesos de mejora continua y liderar con datos y resultados.",
+        "Herramientas de planificación y seguimiento de metas, con indicadores claros para líderes.",
+        "Capacidad para automatizar procesos clave que liberen tiempo y mejoren la eficiencia del equipo."
+      ],
       how: [
         "Mentorías personalizadas incorporando modelos de gestión del cambio, gestión del conocimiento y comunicación estratégica.",
         "Introducción de herramientas de planificación y seguimiento de metas, con indicadores claros para líderes.",
         "Asesoría sobre cómo automatizar procesos clave que liberen tiempo y mejoren la eficiencia del equipo."
       ],
-      result: "Líderes con visión estratégica y habilidades para movilizar equipos, sostener procesos de mejora continua y liderar con datos y resultados."
+      cta: "Impulsa tu liderazgo ejecutivo."
     },
     {
       title: "Laboratorios de Innovación Colectiva",
       claim: "Cuando las ideas se encuentran, la innovación florece.",
-      purpose: "Convertir retos en soluciones medibles y accionables, creando cultura de innovación y gestión del conocimiento.",
+      description: "Convertir retos en soluciones medibles y accionables, creando cultura de innovación y gestión del conocimiento.",
+      achievements: [
+        "Soluciones innovadoras listas para implementarse, con planes claros, responsables definidos y mecanismos de evaluación que garantizan impacto real.",
+        "Cultura de innovación instalada en el equipo con herramientas de gestión del conocimiento.",
+        "Procesos optimizados mediante principios de automatización aplicados estratégicamente."
+      ],
       how: [
         "Facilitamos sesiones de co-creación aplicando herramientas de gestión del conocimiento para que las ideas se documenten y escalen.",
         "Incorporamos métodos de planificación ágil y tableros de seguimiento de indicadores para medir el avance de las soluciones creadas.",
         "Integramos principios de automatización para evaluar qué procesos pueden optimizarse."
       ],
-      result: "Soluciones innovadoras listas para implementarse, con planes claros, responsables definidos y mecanismos de evaluación que garantizan impacto real."
+      cta: "Activa la innovación en tu organización."
     },
     {
       title: "Acompañamiento en Procesos de Cambio Organizacional",
       claim: "Convertir el cambio en motor de crecimiento.",
-      purpose: "Guiar a las organizaciones en procesos de transformación, asegurando la adaptación estratégica y el aprendizaje continuo.",
+      description: "Guiar a las organizaciones en procesos de transformación, asegurando la adaptación estratégica y el aprendizaje continuo.",
+      achievements: [
+        "Organizaciones ágiles, con procesos claros y eficientes, que aprenden de cada etapa de cambio y convierten ese aprendizaje en ventaja competitiva.",
+        "Sistemas de monitoreo y evaluación implementados para medir el avance del cambio y generar reportes claros.",
+        "Procesos clave automatizados para acelerar la transición y reducir fricciones organizacionales."
+      ],
       how: [
         "Implementamos metodologías de gestión del cambio basadas en evidencia y buenas prácticas internacionales.",
         "Diseñamos sistemas de monitoreo y evaluación para medir el avance del cambio y generar reportes claros.",
         "Aplicamos técnicas de gestión del conocimiento para que los aprendizajes se integren al ADN organizacional.",
         "Identificamos procesos clave a automatizar para acelerar la transición y reducir fricciones."
       ],
-      result: "Organizaciones ágiles, con procesos claros y eficientes, que aprenden de cada etapa de cambio y convierten ese aprendizaje en ventaja competitiva."
+      cta: "Transforma tu organización hoy."
     }
   ];
 
@@ -318,21 +349,66 @@ const MethodCasaPage = () => {
                   {service.claim}
                 </p>
 
-                <div className="space-y-3 sm:space-y-4 md:space-y-6">
-                  <div>
-                    <h4 className="text-xs sm:text-sm md:text-base font-semibold text-[#6C7A52] mb-1 sm:mb-2">
-                      ¿Para qué sirve?
-                    </h4>
-                    <p className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed">
-                      {service.purpose}
-                    </p>
-                  </div>
+                <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed mb-4 sm:mb-6">
+                  {service.description}
+                </p>
 
-                  <div>
-                    <h4 className="text-xs sm:text-sm md:text-base font-semibold text-[#6C7A52] mb-1 sm:mb-2">
+                {/* Sección desplegable ¿Qué lograrás? */}
+                <div className="mb-4">
+                  <button
+                    onClick={() => toggleSection(index, 'achievements')}
+                    className="flex items-center justify-between w-full text-left text-sm sm:text-base md:text-lg font-semibold text-[#6C7A52] mb-2 hover:text-[#4F8F8B] transition-colors"
+                  >
+                    ¿Qué lograrás?
+                    {expandedSections[`${index}-achievements`] ? (
+                      <ChevronUp size={18} />
+                    ) : (
+                      <ChevronDown size={18} />
+                    )}
+                  </button>
+                  {expandedSections[`${index}-achievements`] && (
+                    <ul className="space-y-2 text-xs sm:text-sm md:text-base text-gray-700 pl-4">
+                      {service.achievements.map((achievement, achIndex) => (
+                        <li key={achIndex} className="flex items-start space-x-2">
+                          <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-[#4F8F8B] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                          <span className="leading-relaxed">{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+
+                {/* Botones de acción */}
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6">
+                  <button
+                    onClick={() => toggleSection(index, 'how')}
+                    className="flex items-center justify-center bg-gray-100 text-[#6C7A52] px-4 py-2 rounded-full text-xs sm:text-sm md:text-base font-medium hover:bg-gray-200 transition-all duration-300"
+                  >
+                    ¿Cómo lo hacemos?
+                    {expandedSections[`${index}-how`] ? (
+                      <ChevronUp className="ml-2" size={14} />
+                    ) : (
+                      <ChevronDown className="ml-2" size={14} />
+                    )}
+                  </button>
+                  
+                  <a
+                    href="/contacto"
+                    className="inline-flex items-center justify-center bg-[#4F8F8B] text-white px-4 py-2 rounded-full text-xs sm:text-sm md:text-base font-medium hover:bg-[#6C7A52] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 group"
+                  >
+                    <Calendar className="mr-2" size={14} />
+                    Agendar sesión
+                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={14} />
+                  </a>
+                </div>
+
+                {/* Sección desplegable Cómo lo hacemos */}
+                {expandedSections[`${index}-how`] && (
+                  <div className="mt-4 p-4 bg-gray-50 rounded-xl">
+                    <h4 className="text-sm sm:text-base md:text-lg font-semibold text-[#6C7A52] mb-3">
                       ¿Cómo lo hacemos?
                     </h4>
-                    <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm md:text-base text-gray-700">
+                    <ul className="space-y-2 text-xs sm:text-sm md:text-base text-gray-700">
                       {service.how.map((item, itemIndex) => (
                         <li key={itemIndex} className="flex items-start space-x-2">
                           <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-[#4F8F8B] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
@@ -341,26 +417,13 @@ const MethodCasaPage = () => {
                       ))}
                     </ul>
                   </div>
+                )}
 
-                  <div>
-                    <h4 className="text-xs sm:text-sm md:text-base font-semibold text-[#6C7A52] mb-1 sm:mb-2">
-                      ¿Qué lograremos?
-                    </h4>
-                    <p className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed">
-                      {service.result}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-4 sm:mt-6 md:mt-8">
-                  <a
-                    href="/contacto"
-                    className="inline-flex items-center bg-[#4F8F8B] text-white px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-medium hover:bg-[#6C7A52] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 group"
-                  >
-                    <Calendar className="mr-1 sm:mr-2" size={14} />
-                    Agendar una sesión
-                    <ArrowRight className="ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" size={12} />
-                  </a>
+                {/* CTA específico del servicio */}
+                <div className="mt-4 text-center">
+                  <p className="text-sm sm:text-base md:text-lg font-medium text-[#6C7A52] mb-2">
+                    {service.cta}
+                  </p>
                 </div>
               </div>
             ))}
