@@ -349,11 +349,25 @@ const HomePage = () => {
 
             {/* Book Block */}
             <div className="bg-gradient-to-br from-[#D9A689]/10 to-white p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-lg text-center border border-[#D9A689]/20">
-              <div className="aspect-[3/4] bg-gradient-to-br from-[#D9A689]/20 to-[#C2A14D]/20 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 md:mb-6 shadow-md">
-                <div className="text-center text-gray-500">
-                  <BookOpen size={28} className="mx-auto mb-1 sm:mb-2 text-[#6C7A52]" />
-                  <p className="text-xs">Portada del Libro</p>
-                </div>
+              <div className="aspect-[3/4] bg-gradient-to-br from-[#D9A689]/20 to-[#C2A14D]/20 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 md:mb-6 shadow-md overflow-hidden">
+                <img 
+                  src="/images/recursos/LibroElpoder.png" 
+                  alt="El poder de reinventarse con intención y sentido - Portada del libro"
+                  className="w-full h-full"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.parentElement!.innerHTML = `
+                      <div class="w-full h-full flex items-center justify-center text-center text-gray-500">
+                        <div>
+                          <svg class="w-7 h-7 mx-auto mb-1 sm:mb-2 text-[#6C7A52]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253z"></path>
+                          </svg>
+                          <p class="text-xs">Portada del Libro</p>
+                        </div>
+                      </div>
+                    `;
+                  }}
+                />
               </div>
               
               <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-[#6C7A52] mb-1 sm:mb-2">
