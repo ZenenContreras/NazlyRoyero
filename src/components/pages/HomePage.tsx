@@ -392,15 +392,24 @@ const HomePage = () => {
 
             {/* Blog Block */}
             <div className="bg-gradient-to-br from-[#A7D3C1]/10 to-white p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-lg text-center border border-[#A7D3C1]/20 sm:col-span-2 lg:col-span-1">
-              <div className="w-48 h-48 sm:w-64 sm:h-64 mx-auto bg-gradient-to-br from-[#A7D3C1] to-[#6C7A52] rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                <div className="w-full h-full flex flex-col items-center justify-center text-white p-6 sm:p-8">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 mb-3 sm:mb-4 rounded-full bg-white/20 flex items-center justify-center transform animate-pulse">
-                    <Edit3 size={32} className="text-white" />
+                  <div className="w-48 h-48 sm:w-64 sm:h-64 mx-auto bg-gradient-to-br from-[#6C7A52] to-[#4F8F8B] rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img 
+                      src="/images/blog/portadaBlog.PNG" 
+                      alt="En Movimiento Podcast Cover"
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.parentElement!.innerHTML = `
+                          <div class="w-full h-full flex flex-col items-center justify-center text-white p-6 sm:p-8">
+                            <div class="w-16 h-16 sm:w-20 sm:h-20 mb-3 sm:mb-4 rounded-full bg-white/20 flex items-center justify-center transform animate-pulse">
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-bold mb-2">INARA</h3>
+                            <p class="text-sm opacity-90">BLOG</p>
+                          </div>
+                        `;
+                      }}
+                    />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-2">INARA</h3>
-                  <p className="text-sm opacity-90">BLOG</p>
-                </div>
-              </div>
 
               <h3 className="text-sm sm:text-base md:text-lg lg:text-2xl font-bold text-[#6C7A52] mb-1 sm:mb-2 pt-8">
                 INARA | <span className="tracking-wider text-xs sm:text-sm md:text-base">B L O G</span>

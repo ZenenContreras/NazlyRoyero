@@ -25,7 +25,7 @@ const ResourcesPage = () => {
       icon: Mail,
       downloadLink: "#",
       category: "Email",
-      image: "/images/recursos/newsletter-portada.jpg"
+      image: "/images/recursos/newsletter.PNG"
     },
     {
       id: 3,
