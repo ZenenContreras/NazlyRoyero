@@ -55,28 +55,24 @@ const BlogPage = () => {
   return (
     <div className="min-h-screen bg-white pt-16">
       
-      {/* Hero Section - Título Principal */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-[#A7D3C1]/10 to-white animate-in fade-in duration-500">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 animate-in slide-in-from-bottom-4 duration-700">
-            <span className="bg-gradient-to-r from-[#6C7A52] via-[#4F8F8B] to-[#A7D3C1] bg-clip-text text-transparent">
-              INARA
-            </span>
-          </h1>
-          <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6 md:mb-8 max-w-4xl mx-auto leading-relaxed animate-in slide-in-from-bottom-4 duration-700 delay-100">
-            <span className="text-[#6C7A52] font-semibold">📖 BLOG:</span>{" "}
-            <span className="text-gray-700">De la raíz</span>{" "}
-            <span className="text-[#4F8F8B] font-bold italic">al legado</span>
-          </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed animate-in slide-in-from-bottom-4 duration-700 delay-200">
-            <span className="text-[#4F8F8B] font-medium">Un espacio para transformar tu historia en propósito, cambio y legado</span>{" "}
-            a través de reflexiones conscientes.
-          </p>
+      {/* Banner Image Section */}
+      <section className="py-2 sm:py-6 md:py-8 lg:py-12 bg-gradient-to-br from-[#A7D3C1]/10 to-white animate-in fade-in duration-500">
+        <div className="w-full sm:max-w-6xl sm:mx-auto sm:px-6 lg:px-8">
+          <div className="relative w-full sm:max-w-2xl sm:mx-auto" style={{ aspectRatio: '2640/1485' }}>
+            <img
+              src="/images/blog/banner.PNG"
+              alt="INARA Blog Banner"
+              className="w-full h-full object-cover object-center sm:rounded-2xl shadow-2xl"
+              style={{ aspectRatio: '2640/1485' }}
+            />
+            {/* Optional overlay for better visual appeal */}
+            <div className="absolute inset-0 bg-black/5 sm:rounded-2xl"></div>
+          </div>
         </div>
       </section>
 
       {/* Main Content Section */}
-      <section className="py-6 sm:py-8 md:py-12 bg-white">
+      <section className="py-2 sm:py-6 md:py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Mobile: Stacked Layout, Desktop: 2 Columns */}
@@ -166,6 +162,13 @@ const BlogPage = () => {
                 {/* Blog Cover */}
                 <div className="relative mb-4 sm:mb-6">
                   <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 mx-auto bg-gradient-to-br from-[#6C7A52] to-[#4F8F8B] rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img 
+                      src="/images/blog/portadaBlog.PNG" 
+                      alt="En Movimiento Podcast Cover"
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.parentElement!.innerHTML = `
                     <div className="w-full h-full flex flex-col items-center justify-center text-white p-6 sm:p-8">
                       <div className="w-16 h-16 sm:w-20 sm:h-20 mb-3 sm:mb-4 rounded-full bg-white/20 flex items-center justify-center transform animate-pulse">
                         <BookOpen size={32} />
@@ -174,14 +177,11 @@ const BlogPage = () => {
                       <p className="text-sm opacity-90">BLOG</p>
                       <p className="text-xs opacity-75 mt-2">De la raíz al legado</p>
                     </div>
+                        `;
+                      }}
+                    />
                   </div>
                   
-                  {/* Floating Read Button */}
-                  <div className="absolute -bottom-3 sm:-bottom-4 left-1/2 transform -translate-x-1/2">
-                    <button className="w-12 h-12 sm:w-16 sm:h-16 bg-white shadow-2xl rounded-full flex items-center justify-center text-[#6C7A52] hover:scale-110 transition-all duration-300 border-4 border-white group">
-                      <BookOpen className="transform group-hover:scale-110 transition-transform duration-200" size={20} />
-                    </button>
-                  </div>
                 </div>
 
                 {/* Blog Info */}
