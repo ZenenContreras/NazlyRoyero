@@ -170,16 +170,10 @@ const ResourcesPage = () => {
                     {resource.actions ? (
                       <>
                         <a
-                          href={resource.actions[0].link}
-                          className="block bg-[#C2A14D] text-white px-6 sm:px-4 md:px-6 py-3 sm:py-2 md:py-3 rounded-full text-sm sm:text-sm md:text-base font-medium hover:bg-[#D9A689] transition-colors transform hover:scale-105 duration-200"
-                        >
-                          COMPRAR EN {resource.actions[0].platform.toUpperCase()}
-                        </a>
-                        <a
                           href={resource.actions[1].link}
-                          className="block border-2 border-[#C2A14D] text-[#C2A14D] px-6 sm:px-4 md:px-6 py-3 sm:py-2 md:py-3 rounded-full text-sm sm:text-sm md:text-base font-medium hover:bg-[#C2A14D] hover:text-white transition-all transform hover:scale-105 duration-200"
+                             className="block border-2 border-[#C2A14D] text-[#C2A14D] px-6 sm:px-4 md:px-6 py-3 sm:py-2 md:py-3 rounded-full text-sm sm:text-sm md:text-base font-medium hover:bg-[#C2A14D] hover:text-white transition-all transform hover:scale-105 duration-200"
                         >
-                          COMPRAR EN {resource.actions[1].platform.toUpperCase()}
+                          PROXIMAMENTE
                         </a>
                       </>
                     ) : resource.id === 3 ? (

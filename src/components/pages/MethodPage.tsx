@@ -343,42 +343,14 @@ const MethodPage = () => {
       >
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center mb-4 sm:mb-6">
-            <Star className="text-[#D9A689] mr-2" size={24} />
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold">Transformación consciente</h3>
-            <Star className="text-[#D9A689] ml-2" size={24} />
+            <h3 className="text-2xl md:text-4xl font-bold">Transformación consciente</h3>
           </div>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mb-3 sm:mb-4 md:mb-6">
+          <p className="text-sm sm:text-base md:text-lg lg:text-2xl leading-relaxed mb-3 sm:mb-4 md:mb-6">
             El Método Estrella está diseñado para acompañarte en procesos de cambio, crecimiento y reinvención. Integra tu desarrollo personal y profesional de manera consciente y convierte tu potencial en un impacto real, profundo y sostenible.
           </p>
         </div>
       </section>
 
-      {/* Main CTA */}
-      <section 
-        ref={ctaAnimation.ref}
-        className={`py-6 sm:py-8 md:py-12 lg:py-16 bg-gradient-to-br from-[#D9A689]/10 to-white transition-all duration-700 ease-out delay-300 ${
-          ctaAnimation.isVisible 
-            ? 'opacity-100 translate-y-0' 
-            : 'opacity-0 translate-y-4'
-        }`}
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#6C7A52] mb-3 sm:mb-4 md:mb-6">
-            ¿Listo para tu expansión personal y profesional?
-          </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-4 sm:mb-6 md:mb-8">
-            Descubre cómo aplicar el Método Estrella en tu vida y agenda una sesión conmigo.
-          </p>
-          <a
-            href="/contacto"
-            className="inline-flex items-center bg-[#D9A689] text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full text-sm sm:text-base md:text-lg font-medium hover:bg-[#c49474] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 group"
-          >
-            <Calendar className="mr-1 sm:mr-2" size={16} />
-            Agendar una sesión
-            <ArrowRight className="ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" size={16} />
-          </a>
-        </div>
-      </section>
 
       {/* Services Section */}
       <section 
@@ -459,7 +431,7 @@ const MethodPage = () => {
                     onClick={() => toggleSection(index, 'how')}
                     className="flex items-center justify-center bg-gray-100 text-[#6C7A52] px-4 py-2 rounded-full text-sm sm:text-base font-medium hover:bg-gray-200 transition-all duration-300"
                   >
-                    ¿Cómo lo hacemos?
+                    Ver más
                     {expandedSections[`${index}-how`] ? (
                       <ChevronUp className="ml-2" size={16} />
                     ) : (
@@ -481,7 +453,7 @@ const MethodPage = () => {
                 {expandedSections[`${index}-how`] && (
                   <div className="mt-4 p-4 bg-gray-50 rounded-xl">
                     <h4 className="text-base sm:text-lg font-semibold text-[#6C7A52] mb-3">
-                      Cómo lo hacemos
+                      ¿Cómo lo hacemos?
                     </h4>
                     <ul className="space-y-2 text-sm sm:text-base text-gray-700">
                       {service.how.map((item, itemIndex) => (

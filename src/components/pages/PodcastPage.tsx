@@ -8,8 +8,9 @@ const PodcastPage = () => {
       subtitle: "✨",
       description: "Explora ese momento decisivo cuando algo dentro de ti hace click y empiezas a moverte hacia tu transformación.",
       duration: "42 min",
-      date: "7 Agosto 2025",
-      image: "/images/podcast/episodio1.png"
+      date: "8 Agosto 2025",
+      image: "/images/podcast/episodio1.png",
+      estado: "proximamente"
     },
     {
       id: 2,
@@ -17,8 +18,9 @@ const PodcastPage = () => {
       subtitle: "👁️",
       description: "Aprende a identificar y escuchar esas señales internas que te indican que es momento de evolucionar.",
       duration: "38 min",
-      date: "Próximamente",
-      image: "/images/podcast/episodio2.png"
+      date: "15 ago 2025",
+      image: "/images/podcast/episodio2.png",
+      estado: "proximamente"
     },
     {
       id: 3,
@@ -27,7 +29,8 @@ const PodcastPage = () => {
       description: "Explora qué se necesita para superar el miedo y dar ese primer paso hacia tu transformación.",
       duration: "45 min",
       date: "Próximamente",
-      image: "/images/podcast/episodio3.png"
+      image: "/images/podcast/episodio3.png",
+      estado: "proximamente"
     },
     {
       id: 4,
@@ -36,7 +39,8 @@ const PodcastPage = () => {
       description: "Explora tus rutas desconocidas.",
       duration: "39 min",
       date: "Próximamente",
-      image: "/images/podcast/episodio4.png"
+      image: "/images/podcast/episodio4.png",
+      estado: "proximamente"
     },
     {
       id: 5,
@@ -45,7 +49,8 @@ const PodcastPage = () => {
       description: "Lo que conectas cuando te atreves a cambiar de ruta.",
       duration: "41 min",
       date: "Próximamente",
-      image: "/images/podcast/episodio5.png"
+      image: "/images/podcast/episodio5.png",
+      estado: "proximamente"
     },
     {
       id: 6,
@@ -54,7 +59,8 @@ const PodcastPage = () => {
       description: "Señales ocultas de que es hora avanzar",
       duration: "37 min",
       date: "Próximamente",
-      image: "/images/podcast/episodio6.png"
+      image: "/images/podcast/episodio6.png",
+      estado: "proximamente"
     },
     {
       id: 7,
@@ -63,7 +69,8 @@ const PodcastPage = () => {
       description: "La ciencia secreta de moverte por dentro.",
       duration: "43 min",
       date: "Próximamente",
-      image: "/images/podcast/episodio7.png"
+      image: "/images/podcast/episodio7.png",
+      estado: "proximamente"
     },
     {
       id: 8,
@@ -72,7 +79,8 @@ const PodcastPage = () => {
       description: "Viajar sin peso, crear sin límites.",
       duration: "40 min",
       date: "Próximamente",
-      image: "/images/podcast/episodio8.png"
+      image: "/images/podcast/episodio8.png",
+      estado: "proximamente"
     },
     {
       id: 9,
@@ -81,7 +89,8 @@ const PodcastPage = () => {
       description: " Cómo reinventarte sin presionar pausa.",
       duration: "44 min",
       date: "Próximamente",
-      image: "/images/podcast/episodio9.png"
+      image: "/images/podcast/episodio9.png",
+      estado: "proximamente"
     },
     {
       id: 10,
@@ -90,7 +99,8 @@ const PodcastPage = () => {
       description: "Cuando moverte abre universos que no imaginabas.",
       duration: "46 min",
       date: "Próximamente",
-      image: "/images/podcast/episodio10.png"
+      image: "/images/podcast/episodio10.png",
+      estado: "proximamente"
     }
   ];
 
@@ -111,7 +121,7 @@ const PodcastPage = () => {
             <span className="text-[#4F8F8B] font-bold italic">todo se transforma</span>
           </h2>
           <p className="text-sm sm:text-base md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed animate-in slide-in-from-bottom-4 duration-700 delay-200">
-            <span className="text-[#C2A14D] font-medium">Conversaciones sobre transformación, propósito y liderazgo consciente para construir una vida con intención y bienestar.</span>
+            <span className="text-[#C2A14D] font-medium">Proximamente Conversaciones sobre transformación, propósito y liderazgo consciente para construir una vida con intención y bienestar.</span>
           
           </p>
         </div>
@@ -134,13 +144,13 @@ const PodcastPage = () => {
                 {episodes.map((episode, index) => (
                   <div
                     key={episode.id}
-                    className="group bg-white rounded-xl sm:rounded-2xl border border-gray-200 hover:border-[#6C7A52]/30 hover:shadow-lg transition-all duration-300 overflow-hidden animate-in fade-in slide-in-from-bottom-2 delay-200"
+                    className={`group bg-white rounded-xl sm:rounded-2xl border-2 ${episode.estado === 'proximamente' ? 'border-red-500' : 'border-[#A7D3C1]'}  border-opacity-75 hover:shadow-lg transition-all duration-300 overflow-hidden animate-in fade-in slide-in-from-bottom-2 delay-200`}
                     style={{ animationDelay: `${400 + index * 100}ms` }}
                   >
-                    <div className="flex items-start p-4 sm:p-6">
+                    <div className={`flex items-start p-4 sm:p-6 `}>
                       
                       {/* Episode Number */}
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 mr-3 sm:mr-4 self-start">
+                      <div className='w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 mr-3 sm:mr-4 self-start'>
                         <div className="w-full h-full bg-gradient-to-br from-[#6C7A52] to-[#4F8F8B] rounded-lg sm:rounded-xl flex items-center justify-center text-white font-medium text-sm sm:text-base transform group-hover:scale-105 transition-transform duration-200">
                           {episode.id}
                         </div>
@@ -174,7 +184,11 @@ const PodcastPage = () => {
                           {episode.description}
                         </p>
                         <div className="flex items-center text-xs text-gray-500">
-                          <span>{episode.date}</span>
+                          <Play size={12} className={`mr-1 ${episode.estado === 'activo' ? 'text-green-500' : 'text-red-500'}`} />
+                          {episode.estado === 'activo' ? (
+                          <span className='text-green-500'> {episode.date} </span>
+                          ) : (<p className='text-red-500'> Próximamente</p> 
+                          )}
                           <span className="mx-1 sm:mx-2">•</span>
                           <span>{episode.duration}</span>
                         </div>
@@ -256,7 +270,7 @@ const PodcastPage = () => {
                     Nada se detiene, todo se transforma.
                   </p>
                   <p className="text-gray-600 text-xs sm:text-sm leading-relaxed max-w-sm mx-auto">
-                    Espacio de conversaciones sobre transformación, intención, propósito, 
+                    Proximamente, El Espacio de conversaciones sobre transformación, intención, propósito, 
                     liderazgo consciente, bienestar y expansión.
                   </p>
                 </div>

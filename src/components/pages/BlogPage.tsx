@@ -5,50 +5,58 @@ const BlogPage = () => {
     {
       title: "✨ Cómo redescubrir quién eres cuando todo parece cambiar",
       excerpt: "💡  Porque en medio de la tormenta también hay una brújula que apunta a lo esencial: tú.",
-      date: "7 Agosto 2025",
-      readTime: "5 min"
+      date: "8 Agosto 2025",
+      readTime: "5 min",
+      estado: "activo"
     },
     {
       title: "🌱 De la raíz a tu propósito: ejercicios para encontrar tu norte personal",
       excerpt: "✨ Porque a veces perderse es el primer paso para encontrarse.",
       date: "7 Agosto 2025",
-      readTime: "7 min"
+      readTime: "7 min",
+      estado: "proximamente"
     },
     {
       title: "🤝 Equipos que brillan: la conexión como motor de resultados",
       excerpt: "✨ Porque cuando las personas se conectan de verdad, los resultados dejan de ser solo números y se convierten en logros que inspiran.",
       date: "7 Agosto 2025",
-      readTime: "6 min"
+      readTime: "6 min",
+      estado: "proximamente"
     },
     {
       title: "🤝Aprender juntos: el secreto de los equipos que trascienden",
       excerpt: "✨ Porque ningún gran resultado se logra en solitario.",
       date: "7 Agosto 2025",
-      readTime: "8 min"
+      readTime: "8 min",
+      estado: "proximamente"
     },
     {
       title: "🔄 Transforma la incertidumbre en oportunidad: claves para reinventarte",
       excerpt: "✨ Porque no siempre puedes elegir lo que cambia, pero sí cómo lo conviertes en tu siguiente gran paso.",
       date: "7 Agosto 2025",
-      readTime: "6 min"
+      readTime: "6 min",
+      estado: "proximamente"
     },
     {
       title: "🌟 Liderarte a ti para liderar a otros",
       excerpt: "✨ Porque nadie puede guiar a otros si no ha aprendido primero a guiarse a sí mismo.",
       date: "7 Agosto 2025",
-      readTime: "9 min"
+      readTime: "9 min",
+      estado: "proximamente"
     },
     {
       title: "✨ Dejar huella: cómo construir un legado desde hoy",
       excerpt: "🌱 Porque tu legado no es lo que dejas al final, sino lo que empiezas a sembrar hoy.",
       date: "7 Agosto 2025",
-      readTime: "9 min"
+      readTime: "9 min",
+      estado: "proximamente"
     },
     {
       title: "💡 Claves para activar la creatividad de tu equipo",
       excerpt: "✨ Porque en un mundo que se reinventa cada día, las organizaciones que crean se vuelven imparables.",
       date: "7 Agosto 2025",
-      readTime: "9 min"
+      readTime: "9 min",
+      estado: "proximamente"
     }
   ];
 
@@ -72,7 +80,7 @@ const BlogPage = () => {
       </section>
 
       {/* Main Content Section */}
-      <section className="py-2 sm:py-6 md:py-8 bg-white">
+      <section className="py-6 md:py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Mobile: Stacked Layout, Desktop: 2 Columns */}
@@ -88,7 +96,7 @@ const BlogPage = () => {
                 {blogPosts.map((post, index) => (
                   <div
                     key={index}
-                    className="group bg-white rounded-xl sm:rounded-2xl border border-gray-200 hover:border-[#6C7A52]/30 hover:shadow-lg transition-all duration-300 overflow-hidden animate-in fade-in slide-in-from-bottom-2 delay-200"
+                    className={`group bg-white rounded-xl sm:rounded-2xl border-2 ${post.estado === 'proximamente' ? 'border-red-500' : 'border-[#A7D3C1]' } hover:shadow-lg transition-all duration-300 overflow-hidden animate-in fade-in slide-in-from-bottom-2 delay-200`}
                     style={{ animationDelay: `${400 + index * 100}ms` }}
                   >
                     <div className="flex items-start p-4 sm:p-6">
@@ -116,8 +124,13 @@ const BlogPage = () => {
                           {post.excerpt}
                         </p>
                         <div className="flex items-center text-xs text-gray-500">
-                          <Calendar size={12} className="mr-1" />
-                          <span>{post.date}</span>
+                          <Calendar size={12} className={`mr-1 ${post.estado === 'activo' ? 'text-green-500' : 'text-red-500'}`} />
+                          {post.estado === 'activo' ?(
+                            <span className='text-green-500'>{post.date}</span> 
+                          ):(
+                            <p className='text-red-500'>Próximamente</p>
+                          )}
+                          
                           <span className="mx-1 sm:mx-2">•</span>
                           <Clock size={12} className="mr-1" />
                           <span>{post.readTime}</span>
@@ -156,7 +169,7 @@ const BlogPage = () => {
             </div>
 
             {/* Blog Cover & Info - Shows first on mobile, right on desktop */}
-            <div className="order-1 lg:order-2 animate-in slide-in-from-right-6 duration-700 delay-400">
+            <div className="hidden lg:block order-1 lg:order-2 animate-in slide-in-from-right-6 duration-700 delay-400">
               <div className="bg-gradient-to-br from-[#A7D3C1]/10 to-[#6C7A52]/5 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center lg:sticky lg:top-24">
                 
                 {/* Blog Cover */}

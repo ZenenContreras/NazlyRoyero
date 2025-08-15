@@ -342,7 +342,7 @@ const HomePage = () => {
                 href="/podcast"
                 className="inline-flex items-center bg-[#4F8F8B] text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full text-xs sm:text-sm md:text-base font-medium hover:bg-[#6C7A52] transition-colors group"
               >
-                ESCUCHA AHORA
+                ESCUCHA PROXIMAMENTE
                 <ArrowRight className="ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" size={14} />
               </a>
             </div>
@@ -377,15 +377,9 @@ const HomePage = () => {
               <div className="space-y-2 sm:space-y-3">
                 <a
                   href="#"
-                  className="block bg-[#C2A14D] text-white px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-medium hover:bg-[#D9A689] transition-colors"
-                >
-                  VERSIÓN FÍSICA
-                </a>
-                <a
-                  href="#"
                   className="block border-2 border-[#C2A14D] text-[#C2A14D] px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-medium hover:bg-[#C2A14D] hover:text-white transition-all"
                 >
-                  VERSIÓN DIGITAL
+                  PROXIMAMENTE
                 </a>
               </div>
             </div>
