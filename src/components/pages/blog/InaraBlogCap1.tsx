@@ -334,17 +334,19 @@ const InaraBlogCap1 = () => {
         </div>
 
         {/* Sobre el blog */}
-        <div className="rounded-lg mb-16 p-8 border-l-4" style={{ backgroundColor: '#FAF8F2', borderColor: '#4F8F8B' }}>
+        <div className="rounded-lg mb-16 p-8 border-l-4" style={{ backgroundColor: '#C2A14D', borderColor: 'white' }}>
           <div className="flex items-start mb-6">
-            <h4 className="text-xl font-bold" style={{ color: '#4F8F8B' }}>
+            <h4 className="text-xl font-bold" style={{ color: 'white' }}>
               ️⭐ Sobre este blog
             </h4>
           </div>
 
-          <p className="mb-6" style={{ color: '#555555' }}>
-            Antes de seguir navegando la tormenta del cambio, detente 5 minutos para hacerte 
-            estas preguntas y escribir las respuestas con sinceridad. Esta pausa te conectará con 
-            tu brújula interior y te traerá claridad:
+          <p className="mb-6" style={{ color: 'white' }}>
+            <strong>En INARA: </strong>De la raíz al legado comparto reflexiones y herramientas para transformar
+            tu historia en propósito, evolución y legado.
+          </p>
+            <p className="mb-6" style={{ color: 'white' }}>
+            Exploramás artículos o conocemis servicios de acompañamiento personalizados.
           </p>
         </div>
       </main>
