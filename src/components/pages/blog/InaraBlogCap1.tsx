@@ -13,8 +13,6 @@ const InaraBlogCap1 = () => {
               className="w-full h-full object-cover object-center sm:rounded-2xl shadow-2xl"
               style={{ aspectRatio: '2640/1485' }}
             />
-            {/* Optional overlay for better visual appeal */}
-            <div className="absolute inset-0 bg-black/5 sm:rounded-2xl"></div>
           </div>
         </div>
       </section>
@@ -346,7 +344,8 @@ const InaraBlogCap1 = () => {
             tu historia en propósito, evolución y legado.
           </p>
             <p className="mb-6" style={{ color: 'white' }}>
-            Exploramás artículos o conocemis servicios de acompañamiento personalizados.
+            Exploramás artículos o conocemis servicios de acompañamiento personalizados
+
           </p>
         </div>
       </main>
