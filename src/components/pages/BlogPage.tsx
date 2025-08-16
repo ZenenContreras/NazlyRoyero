@@ -5,9 +5,10 @@ const BlogPage = () => {
     {
       title: "✨ Cómo redescubrir quién eres cuando todo parece cambiar",
       excerpt: "💡  Porque en medio de la tormenta también hay una brújula que apunta a lo esencial: tú.",
-      date: "8 Agosto 2025",
+      date: "16 Agosto 2025",
       readTime: "5 min",
-      estado: "activo"
+      estado: "activo",
+      link:'/blog/inara/1'
     },
     {
       title: "🌱 De la raíz a tu propósito: ejercicios para encontrar tu norte personal",
@@ -139,9 +140,9 @@ const BlogPage = () => {
 
                       {/* Read More Button */}
                       <div className="flex-shrink-0 ml-3 sm:ml-4 self-start pt-1">
-                        <button className="w-8 h-8 sm:w-10 sm:h-10 bg-[#6C7A52] hover:bg-[#5a6644] rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-105 shadow-lg group">
+                        <a href={post.link} className="w-8 h-8 sm:w-10 sm:h-10 bg-[#6C7A52] hover:bg-[#5a6644] rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-105 shadow-lg group">
                           <ArrowRight className="transform group-hover:translate-x-0.5 transition-transform duration-200" size={14} />
-                        </button>
+                        </a>
                       </div>
                     </div>
                   </div>
