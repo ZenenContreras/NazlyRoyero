@@ -114,8 +114,6 @@ const InaraBlogCap1 = () => {
               alt="INARA Blog Banner"
               className="w-full h-full mb-16 object-cover object-center"
             />
-            {/* Optional overlay for better visual appeal */}
-            <div className="absolute inset-0 bg-black/5 sm:rounded-2xl"></div>
 
         {/* Tools Section */}
         <div className="mb-16">
