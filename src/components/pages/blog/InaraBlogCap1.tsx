@@ -20,7 +20,7 @@ const InaraBlogCap1 = () => {
       {/* Main Article */}
       <main className="container mx-auto px-4 py-16 max-w-4xl">
         {/* Article Title */}
-        <div className="mb-16">
+        <div className="mb-16 text-justify">
           <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-6" style={{ color: '#f3bb9a' }}>
             Cómo redescubrir quién eres cuando todo parece cambiar:{' '}
             <span className="font-light italic" style={{ color: '#4F8F8B' }}>
@@ -31,7 +31,7 @@ const InaraBlogCap1 = () => {
         </div>
 
         {/* Introduction */}
-        <div className="mb-12">
+        <div className="mb-12 ">
           <div className="flex items-start mb-6">
             <div className="w-2 h-2 rounded-full mt-3 mr-4 flex-shrink-0" style={{ backgroundColor: '#4A4A4A' }}></div>
             <p className="text-lg font-medium" style={{ color: '#4A4A4A' }}>
@@ -43,7 +43,7 @@ const InaraBlogCap1 = () => {
             <span className="text-lg" style={{ color: '#4A4A4A' }}>✨ Cuando todo cambia, ¿Quién eres tú?</span>
           </div>
 
-          <div className="space-y-6 text-base leading-relaxed" style={{ color: '#555555' }}>
+          <div className="space-y-6 text-base leading-relaxed text-justify" style={{ color: '#555555' }}>
             <p>
               Hay momentos en la vida en los que el suelo parece moverse bajo tus pies. Cambios laborales 
               inesperados, relaciones que terminan, decisiones que se vuelven urgentes y el ruido externo que 
@@ -79,7 +79,7 @@ const InaraBlogCap1 = () => {
             </h3>
           </div>
 
-          <div className="space-y-6 text-base leading-relaxed" style={{ color: '#555555' }}>
+          <div className="space-y-6 text-base leading-relaxed text-justify" style={{ color: '#555555' }}>
             <p>
               Redescubrir quién eres no significa volver al punto de partida, sino volver a tu esencia con una 
               mirada fresca y renovada. Significa mirar hacia adentro para encontrar esos valores que resisten 
@@ -123,12 +123,12 @@ const InaraBlogCap1 = () => {
             Herramientas que pueden ayudarte a avanzar
           </h3>
 
-          <p className="text-base leading-relaxed mb-8" style={{ color: '#555555' }}>
+          <p className="text-base leading-relaxed mb-8 text-justify" style={{ color: '#555555' }}>
             En mi experiencia acompañando procesos de cambio, he visto que ciertas prácticas pueden abrir 
             caminos incluso en los momentos más complejos y ayudarte a avanzar con paso firme:
           </p>
 
-          <div className="space-y-6">
+          <div className="space-y-6 text-justify">
             <div className="flex items-start">
               <CheckCircle className="w-6 h-6 mt-1 mr-4 flex-shrink-0" style={{ color: 'black' }} />
               <div>
@@ -140,7 +140,7 @@ const InaraBlogCap1 = () => {
               </div>
             </div>
 
-            <div className="flex items-start">
+            <div className="flex items-start text-justify">
               <CheckCircle className="w-6 h-6 mt-1 mr-4 flex-shrink-0" style={{ color: 'black' }} />
               <div>
                 <h4 className="font-bold mb-2" style={{ color: '#4A4A4A' }}>Define tus valores esenciales:</h4>
@@ -150,7 +150,7 @@ const InaraBlogCap1 = () => {
               </div>
             </div>
 
-            <div className="flex items-start">
+            <div className="flex items-start text-justify">
               <CheckCircle className="w-6 h-6 mt-1 mr-4 flex-shrink-0" style={{ color: 'black' }} />
               <div>
                 <h4 className="font-bold mb-2" style={{ color: '#4A4A4A' }}>Explora nuevas preguntas:</h4>
@@ -161,7 +161,7 @@ const InaraBlogCap1 = () => {
               </div>
             </div>
 
-            <div className="flex items-start">
+            <div className="flex items-start text-justify">
               <CheckCircle className="w-6 h-6 mt-1 mr-4 flex-shrink-0" style={{ color: 'black' }} />
               <div>
                 <h4 className="font-bold mb-2" style={{ color: '#4A4A4A' }}>Diseña micro-acciones desde hoy:</h4>
@@ -182,7 +182,7 @@ const InaraBlogCap1 = () => {
             </h4>
           </div>
 
-          <p className="mb-6" style={{ color: '#555555' }}>
+          <p className="mb-6 text-justify" style={{ color: '#555555' }}>
             Antes de seguir navegando la tormenta del cambio, detente 5 minutos para hacerte 
             estas preguntas y escribir las respuestas con sinceridad. Esta pausa te conectará con 
             tu brújula interior y te traerá claridad:
@@ -210,7 +210,7 @@ const InaraBlogCap1 = () => {
             </div>
           </div>
 
-          <p style={{ color: '#555555' }}>
+          <p className='text-justify' style={{ color: '#555555' }}>
             Cuando termines, cierra tus notas y respira profundo. Visualiza cómo sería tu vida si 
             caminaras con esa intención clara como guía. Con este ejercicio, comienzas a 
             transformar la incertidumbre en acción deliberada.
@@ -227,7 +227,7 @@ const InaraBlogCap1 = () => {
             <p className="text-lg font-medium italic mb-4" style={{ color: '#f3bb9a' }}>
               ✨ Cuando te conoces, vuelves a elegir con intención
             </p>
-            <p className="leading-relaxed" style={{ color: '#555555' }}>
+            <p className="leading-relaxed text-justify" style={{ color: '#555555' }}>
               El autoconocimiento no es un ejercicio abstracto ni un lujo. Es la base para tomar decisiones 
               alineadas con lo que eres hoy y construir desde ahí un futuro con sentido. Cuando te das el 
               permiso para mirarte, cuestionarte y redefinir tu camino, ya no eres solo alguien reaccionando 
@@ -247,7 +247,7 @@ const InaraBlogCap1 = () => {
               </h3>
             </div>
 
-            <div className="space-y-6 text-base leading-relaxed" style={{ color: '#555555' }}>
+            <div className="space-y-6 text-base text-justify leading-relaxed" style={{ color: '#555555' }}>
               <p>
                 Si este artículo resonó contigo, no tienes por qué hacerlo sola o solo.
               </p>
@@ -272,8 +272,13 @@ const InaraBlogCap1 = () => {
               </div>
             </div>
           </div>
-
-          <img src="/" alt="" />
+          <div className=" rounded-xl sm:rounded-2xl flex items-center justify-center ">
+            <img 
+             className='w-full h-full object-cover object-center'
+             src="/images/blog/1/nazlyInara1.jpeg" 
+             alt="" />
+          </div>
+          
         </div>
 
         {/* Free Guide CTA */}
@@ -291,16 +296,18 @@ const InaraBlogCap1 = () => {
               </div>
               <div className="flex-1">
                 <div className="flex items-center mb-3">
-                  <Download className="w-5 h-5 mr-2" style={{ color: '#4A4A4A' }} />
                   <span className="font-medium" style={{ color: '#4A4A4A' }}>
                     "Las 5 preguntas clave para redescubrirte y construir un plan con propósito"
                   </span>
                 </div>
-                <div className="flex items-center">
-                  <Download className="w-5 h-5 mr-2" style={{ color: '#4A4A4A' }} />
-                  <button className="italic hover:underline transition-colors duration-200" style={{ color: '#4A4A4A' }}>
+                <div className="">
+                  <a 
+                    href='public\images\blog\1\Guia5Preguntas.pdf'
+                    download='Guia-5-Preguntas-Clave.pdf'
+                    className=" flex items-center italic hover:underline transition-colors duration-200" style={{ color: '#4A4A4A' }}>
+                    <Download className="w-5 h-5 mr-2" style={{ color: '#4A4A4A' }} />
                     Quiero mi guía gratuita
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -308,12 +315,12 @@ const InaraBlogCap1 = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-left mb-16">
+        <div className="text-justify mb-16">
           <a href="/contacto" className="inline-flex  text-white px-8 py-3 rounded-full mb-8 text-lg font-medium" style={{ background: '#4F8F8B' }}>
             🌟 Da el siguiente paso
           </a>
 
-          <p className="text-lg mb-8 max-w-2xl" style={{ color: '#555555' }}>
+          <p className="text-lg text-justify mb-8 max-w-2xl" style={{ color: '#555555' }}>
             No importa lo que esté cambiando a tu alrededor: siempre puedes volver a ti, encontrar tu brújula 
             y construir algo valioso y con sentido.
           </p>
