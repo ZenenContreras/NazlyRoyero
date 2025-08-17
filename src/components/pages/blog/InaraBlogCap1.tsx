@@ -1,10 +1,10 @@
 import React from 'react';
-import { Star, Download, CheckCircle, Sparkles, FileText, Edit3 } from 'lucide-react';
+import { Edit3, Download, CheckCircle } from 'lucide-react';
 
 const InaraBlogCap1 = () => {
   return (
     <div className="min-h-screen bg-white pt-16">
-      <section className="py-2 sm:py-6 md:py-8 lg:py-12 bg-gradient-to-br from-[#A7D3C1]/10 to-white animate-in fade-in duration-500">
+      <section className="py-2 sm:py-6 md:py-8 lg:py-1 animate-in fade-in duration-500">
         <div className="w-full sm:max-w-6xl sm:mx-auto sm:px-6 lg:px-8">
           <div className="relative w-full sm:max-w-2xl sm:mx-auto" style={{ aspectRatio: '2640/1485' }}>
             <img
@@ -315,7 +315,7 @@ const InaraBlogCap1 = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-justify mb-16">
+        <div className="text-justify mb-12">
           <a href="/contacto" className="inline-flex  text-white px-8 py-3 rounded-full mb-8 text-lg font-medium" style={{ background: '#4F8F8B' }}>
             🌟 Da el siguiente paso
           </a>
@@ -326,9 +326,9 @@ const InaraBlogCap1 = () => {
           </p>
 
           <div className="p-4 rounded-lg mb-8" style={{ backgroundColor: '#F8F6F0' }}>
-            <div className="text-5xl mb-2" style={{ color: '#9BB59B' }}>❝</div>
-            <p className="text-xl text-center font-medium italic mb-2" style={{ color: '#4A4A4A' }}>
-              Hoy puede ser el inicio de una historia extraordinario.
+            <div className="text-5xl " style={{ color: '#9BB59B' }}>❝</div>
+            <p className="text-xl text-center font-medium italic " style={{ color: '#4A4A4A' }}>
+              Hoy puede ser el inicio de una historia extraordinaria.
             </p>
             <div className="text-5xl transform rotate-180" style={{ color: '#9BB59B' }}>❝</div>
           </div>
