@@ -115,7 +115,7 @@ const InaraBlogCap1 = () => {
               className="w-full h-full mb-16 object-cover object-center"
             />
 
-        {/* Tools Section */}
+        {/* Tools Section */}   
         <div className="mb-16">
           <h3 className="text-xl lg:text-2xl font-bold mb-8" style={{ color: '#B8860B' }}>
             Herramientas que pueden ayudarte a avanzar
