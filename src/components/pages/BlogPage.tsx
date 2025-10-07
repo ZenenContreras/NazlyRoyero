@@ -13,9 +13,10 @@ const BlogPage = () => {
     {
       title: "🌱 De la raíz a tu propósito: ejercicios para encontrar tu norte personal",
       excerpt: "✨ Porque a veces perderse es el primer paso para encontrarse.",
-      date: "7 Agosto 2025",
+      date: "7 Octubre 2025",
       readTime: "7 min",
-      estado: "proximamente"
+      estado: "activo",
+      link:'/blog/inara/2'
     },
     {
       title: "🤝 Equipos que brillan: la conexión como motor de resultados",

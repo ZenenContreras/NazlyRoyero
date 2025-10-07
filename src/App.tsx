@@ -3,6 +3,7 @@ import { Header, Footer } from './components/layout';
 import ErrorBoundary from './components/ErrorBoundary';
 import { HomePage, AboutPage, MethodPage, MethodCasaPage, ServicesPage, BlogPage, PodcastPage, ResourcesPage, ContactPage, LoginPage, RegisterPage, NotFoundPage } from './components/pages';
 import InaraBlogCap1 from './components/pages/blog/InaraBlogCap1'
+import InaraBlogCap2 from './components/pages/blog/InaraBlogCap2'
 import { useScrollToSection } from './hooks/useScrollToSection';
 
 function AppContent() {
@@ -24,6 +25,7 @@ function AppContent() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/registro" element={<RegisterPage />} />
         <Route path='/blog/inara/1' element={< InaraBlogCap1/>}/>
+        <Route path='/blog/inara/2' element={< InaraBlogCap2/>}/>
 
         {/* Ruta catch-all para 404 */}
         <Route path="*" element={<NotFoundPage />} />
