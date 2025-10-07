@@ -300,8 +300,8 @@ const InaraBlogCap1 = () => {
                 </div>
                 <div className="">
                   <a 
-                    href='public\images\blog\1\Guia5Preguntas.pdf'
-                    download='Guia-5-Preguntas-Clave.pdf'
+                    href='/images/blog/1/Guia5Preguntas.pdf'
+                    download='Guia5Preguntas.pdf'
                     className=" flex items-center italic hover:underline transition-colors duration-200" style={{ color: '#4A4A4A' }}>
                     <Download className="w-5 h-5 mr-2" style={{ color: '#4A4A4A' }} />
                     Quiero mi guía gratuita
