@@ -35,13 +35,13 @@ const InaraBlogCap2 = () => {
         <div className="mb-12">
           <div className="flex items-start mb-6">
             <div className="w-2 h-2 rounded-full mt-3 mr-4 flex-shrink-0" style={{ backgroundColor: '#4A4A4A' }}></div>
-            <p className="text-lg font-medium" style={{ color: '#4A4A4A' }}>
+            <p className="text-xl font-bold " style={{ color: '#4A4A4A' }}>
               Porque a veces perderse es el primer paso para encontrarse.
             </p>
           </div>
           
           <div className="mb-4 flex items-center">
-            <span className="text-lg" style={{ color: '#4A4A4A' }}>✨ Cuando el ruido de afuera no deja escuchar tu voz interior</span>
+            <span className="text-lg font-bold italic" style={{ color: '#4A4A4A' }}>✨ Cuando el ruido de afuera no deja escuchar tu voz interior</span>
           </div>
 
           <div className="space-y-6 text-base leading-relaxed text-justify" style={{ color: '#555555' }}>
@@ -270,6 +270,14 @@ const InaraBlogCap2 = () => {
           <p className="text-left" style={{ color: '#555555' }}>
             Te acompaño en el camino profundo, honesto y lleno de esperanza. ✨
           </p>
+        </div>
+
+        <div className='flex flex-col py-4 gap-2'>
+            <img src="/images/blog/2/TeAcompaño.jpg" alt="TeAcompaño" />
+            <img src="/images/blog/2/MetodoEstrella.jpg" alt="MetodoEstrella" />
+            <img src="/images/blog/2/SesionEstrella.jpg" alt="SesionEstrella" />
+            <img src="/images/blog/2/SesionEstrellaEtapa2.jpg" alt="SesionEstrellaEtapa2" />
+            <img src="/images/blog/2/SesionEstrellaEtapa3.jpg" alt="SesionEstrellaEtapa3" />
         </div>
 
         {/* Sobre el blog */}
