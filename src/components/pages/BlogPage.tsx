@@ -1,4 +1,5 @@
 import { BookOpen, Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const BlogPage = () => {
   const blogPosts = [
@@ -141,9 +142,9 @@ const BlogPage = () => {
 
                       {/* Read More Button */}
                       <div className="flex-shrink-0 ml-3 sm:ml-4 self-start pt-1">
-                        <a href={post.link} className="w-8 h-8 sm:w-10 sm:h-10 bg-[#6C7A52] hover:bg-[#5a6644] rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-105 shadow-lg group">
+                        <Link to={`${post.link}`} className="w-8 h-8 sm:w-10 sm:h-10 bg-[#6C7A52] hover:bg-[#5a6644] rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-105 shadow-lg group">
                           <ArrowRight className="transform group-hover:translate-x-0.5 transition-transform duration-200" size={14} />
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
